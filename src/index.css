@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Brand Color Palette - Mauve & Charcoal (Refined from Logo) */
+  --color-primary: #C28EB2;
+  /* Mauve (Human-centric/Kindness) */
+  --color-accent: #D8B4CC;
+  /* Lighter Mauve */
+  --color-bg-light: #FDFAFC;
+  /* Soft Pearl (Warm undertone) */
+  --color-bg-card: #FFFFFF;
+  --color-text-dark: #5B5554;
+  /* Charcoal (From Logo Text - Professional/Grounded) */
+  --color-text-muted: #7F7979;
+  /* Soft Charcoal */
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 8rem;
+
+  /* Effects */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(194, 142, 178, 0.15);
+  /* Mauve tinted border */
+  --glass-blur: blur(12px);
+  --shadow-premium: 0 10px 30px rgba(91, 85, 84, 0.05);
+  /* Charcoal tinted shadow */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-xl: 24px;
+
+  /* Layout */
+  --header-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text-dark);
+  background-color: var(--color-bg-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--color-text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Glassmorphism Utilities (Adjusted for Brand Palette) */
+.glass-effect {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-premium);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-text-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Common Layout */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-padding {
+  padding: var(--spacing-xl) 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border: none;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 10px 20px -5px rgba(194, 142, 178, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  background: #A67094;
+  /* Darker Mauve */
+  box-shadow: 0 15px 30px -5px rgba(194, 142, 178, 0.4);
+}
+
+.btn-secondary {
+  background: white;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Smooth Scroll Sections */
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Placeholder Styling (Brand Palette) */
+.placeholder-box {
+  background: #fdf6fa;
+  border: 1px dashed var(--color-accent);
+  border-radius: var(--radius-xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  opacity: 0.6;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

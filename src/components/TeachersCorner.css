@@ -1,0 +1,113 @@
+.teachers-section {
+    background-color: var(--color-bg-light);
+}
+
+.teachers-layout {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: var(--spacing-lg);
+    align-items: start;
+}
+
+.teacher-featured {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.teacher-card {
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-xl);
+    background: white;
+}
+
+.teacher-meta-badges {
+    display: flex;
+    gap: 10px;
+    margin-top: var(--spacing-sm);
+}
+
+.badge {
+    padding: 4px 12px;
+    background: var(--color-bg-light);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    border: 1px solid rgba(194, 142, 178, 0.1);
+}
+
+/* FAQ Styling (Wireframe Style) */
+.faq-section {
+    padding-left: var(--spacing-md);
+}
+
+.faq-title {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-dark);
+    font-weight: 400;
+    /* Matching simple wireframe font weight */
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-item {
+    margin-bottom: var(--spacing-md);
+    cursor: pointer;
+}
+
+.faq-question {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.faq-question span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-dark);
+    transition: var(--transition-smooth);
+}
+
+.faq-line {
+    height: 2px;
+    background: #000;
+    width: 100%;
+}
+
+.faq-item:hover .faq-question span {
+    color: var(--color-primary);
+}
+
+.faq-item.active .faq-question span {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.faq-answer {
+    padding: 1rem 0;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .teachers-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-section {
+        padding-left: 0;
+        margin-top: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .teacher-featured {
+        grid-template-columns: 1fr;
+    }
+}

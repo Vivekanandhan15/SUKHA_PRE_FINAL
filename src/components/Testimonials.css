@@ -1,0 +1,129 @@
+.testimonials-section {
+    padding: var(--spacing-xl) 0;
+    background: white;
+}
+
+.carousel-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.carousel-window {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    padding: 0 var(--spacing-md);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+    background: white;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    padding: var(--spacing-md);
+}
+
+.testimonial-image-panel {
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+}
+
+.testimonial-content-panel {
+    padding-right: var(--spacing-md);
+    text-align: left;
+}
+
+.testimonial-quote {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-md);
+    position: relative;
+}
+
+.testimonial-quote::before {
+    content: '“';
+    position: absolute;
+    left: -2.5rem;
+    top: -1rem;
+    font-size: 5rem;
+    color: var(--color-primary);
+    opacity: 0.2;
+}
+
+.testimonial-author {
+    border-top: 1px solid rgba(194, 142, 178, 0.1);
+    padding-top: var(--spacing-sm);
+}
+
+.author-info h4 {
+    font-size: 1.25rem;
+    color: var(--color-text-dark);
+    margin-bottom: 4px;
+}
+
+.author-meta {
+    font-size: 0.95rem;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.carousel-nav {
+    margin-top: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-dots {
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: rgba(91, 85, 84, 0.1);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.dot.active {
+    width: 30px;
+    border-radius: 10px;
+    background: var(--color-primary);
+    /* Mauve */
+}
+
+@media (max-width: 1024px) {
+    .testimonial-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: var(--spacing-sm);
+    }
+
+    .testimonial-content-panel {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .testimonial-quote {
+        font-size: 1.5rem;
+    }
+
+    .testimonial-quote::before {
+        display: none;
+    }
+}

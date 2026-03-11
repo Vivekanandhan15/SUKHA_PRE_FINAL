@@ -1,0 +1,83 @@
+.main-footer {
+    background-color: var(--color-text-dark);
+    /* Using Charcoal for high-impact professional finish */
+    color: white;
+    padding: var(--spacing-xl) 0 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+}
+
+.footer-brand h2 {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.75rem;
+    color: var(--color-primary) !important;
+    /* Mauve Branding */
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 500px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+}
+
+.link-group h4 {
+    margin-bottom: var(--spacing-sm);
+    color: white;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--color-primary);
+    display: inline-block;
+    padding-bottom: 4px;
+}
+
+.link-group ul li {
+    margin-bottom: 8px;
+}
+
+.link-group ul li a,
+.link-group ul li span {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+}
+
+.link-group ul li a:hover {
+    color: var(--color-primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+}
+
+.bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+        flex-direction: column;
+    }
+}
