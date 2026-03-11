@@ -8,15 +8,16 @@ const Board = () => {
         {
             id: 1,
             name: 'Kavya',
-            role: 'Co-Founder & CEO',
-            content: 'Kavya brings over 10 years of experience in educational policy and community development. She is the driving force behind our vision of equitable education for all rural students.',
+            role: 'Co-Founder',
+            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquid nihil numquam expedita ipsam dolorem ullam nulla quam architecto praesentium.',
             linkedin: '#'
         },
+        
         {
             id: 2,
             name: 'Sanjana',
-            role: 'Co-Founder & COO',
-            content: 'Sanjana excels in operational excellence and sustainable growth strategies. She ensures that every resource is optimized to provide the best possible impact for our students.',
+            role: 'Co-Founder',
+            content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquid nihil numquam expedita ipsam dolorem ullam nulla quam architecto praesentium.',
             linkedin: '#'
         }
     ];

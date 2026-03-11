@@ -3,13 +3,13 @@ import './Team.css';
 
 const Team = () => {
     const members = [
-        { name: 'Niki', role: 'Program Coordinator' },
-        { name: 'Shiva', role: 'Lead Educator' },
-        { name: 'Ayush', role: 'Tech Mentor' },
-        { name: 'Sukanya', role: 'Operations' },
-        { name: 'Vins', role: 'Student Success' },
-        { name: 'Abi', role: 'Community Lead' },
-        { name: 'Sripathy', role: 'Strategic Advisor' },
+        { name: 'Niki', role: 'Co - COO' },
+        { name: 'Shiva', role: 'Co - COO' },
+        { name: 'Ayush', role: 'CFO' },
+        { name: 'Sukanya', role: 'HR' },
+        { name: 'Vins', role: 'Core Team' },
+        { name: 'Abi', role: 'Core Team' },
+        { name: 'Sripathy', role: 'Core Team' },
         { name: 'Chetna', role: 'Content Head' },
     ];
 
