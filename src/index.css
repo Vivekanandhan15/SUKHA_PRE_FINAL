@@ -1,18 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  /* Brand Color Palette - Mauve & Charcoal (Refined from Logo) */
-  --color-primary: #C28EB2;
-  /* Mauve (Human-centric/Kindness) */
-  --color-accent: #D8B4CC;
-  /* Lighter Mauve */
-  --color-bg-light: #FDFAFC;
-  /* Soft Pearl (Warm undertone) */
+  /* Brand Color Palette - Vibrant Indigo & Ocean (Modern premium look) */
+  --color-primary: #4F46E5;
+  /* Deep Indigo - Professional & Trustworthy */
+  --color-accent: #0EA5E9;
+  /* Sky Blue - Fresh & Dynamic */
+  --color-bg-light: #F8FAFC;
+  /* Crisp Slate-tinted Pearl */
   --color-bg-card: #FFFFFF;
-  --color-text-dark: #5B5554;
-  /* Charcoal (From Logo Text - Professional/Grounded) */
-  --color-text-muted: #7F7979;
-  /* Soft Charcoal */
+  --color-text-dark: #0F172A;
+  /* Rich Slate */
+  --color-text-muted: #64748B;
+  /* Muted Slate */
   --color-white: #ffffff;
 
   /* Typography */
@@ -28,11 +28,11 @@
 
   /* Effects */
   --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(194, 142, 178, 0.15);
-  /* Mauve tinted border */
+  --glass-border: rgba(79, 70, 229, 0.15);
+  /* Indigo tinted border */
   --glass-blur: blur(12px);
-  --shadow-premium: 0 10px 30px rgba(91, 85, 84, 0.05);
-  /* Charcoal tinted shadow */
+  --shadow-premium: 0 10px 30px rgba(15, 23, 42, 0.08);
+  /* Slate tinted shadow */
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --radius-xl: 24px;
 
@@ -129,14 +129,14 @@ img {
 .btn-primary {
   background: var(--color-primary);
   color: white;
-  box-shadow: 0 10px 20px -5px rgba(194, 142, 178, 0.3);
+  box-shadow: 0 10px 20px -5px rgba(79, 70, 229, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  background: #A67094;
-  /* Darker Mauve */
-  box-shadow: 0 15px 30px -5px rgba(194, 142, 178, 0.4);
+  background: #4338CA;
+  /* Darker Indigo */
+  box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.5);
 }
 
 .btn-secondary {
@@ -159,14 +159,14 @@ section {
 
 /* Placeholder Styling (Brand Palette) */
 .placeholder-box {
-  background: #fdf6fa;
-  border: 1px dashed var(--color-accent);
+  background: #EEF2FF;
+  border: 1px dashed var(--color-primary);
   border-radius: var(--radius-xl);
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-primary);
-  opacity: 0.6;
+  opacity: 0.8;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;

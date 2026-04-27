@@ -29,8 +29,8 @@ const Footer = () => {
                     <div className="link-group">
                         <h4>Connect</h4>
                         <ul>
-                            <li><a href="mailto:info@sukha.org">info@sukha.org</a></li>
-                            <li><span>New Delhi, India</span></li>
+                            <li><a href="mailto:info@sukha.org">educationsukha@gmail.com</a></li>
+                            <li><span>73, Venkatakrishna Rd, RA Puram, Jeth Nagar, Raja Annamalai Puram, Chennai, Tamil Nadu 600028.</span></li>
                         </ul>
                     </div>
                 </div>

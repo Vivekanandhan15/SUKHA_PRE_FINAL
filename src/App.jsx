@@ -9,6 +9,7 @@ import Blog from './components/Blog';
 import TeachersCorner from './components/TeachersCorner';
 import Gallery from './components/Gallery';
 import VolunteerGallery from './components/VolunteerGallery';
+import Reports from './components/Reports';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import './App.css';
@@ -27,6 +28,7 @@ function App() {
         <TeachersCorner />
         <Gallery />
         <VolunteerGallery />
+        <Reports />
         <Testimonials />
       </main>
       <Footer />

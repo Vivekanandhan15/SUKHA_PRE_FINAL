@@ -1,0 +1,76 @@
+.reports-section {
+    background-color: var(--color-bg-light);
+}
+
+.reports-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 1rem;
+}
+
+.report-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    padding: 2rem 1.5rem;
+    border-radius: var(--radius-xl);
+    background: transparent;
+    transition: var(--transition-smooth);
+    border: 1px solid transparent;
+}
+
+.report-card:hover {
+    background: var(--color-bg-card);
+    border-color: var(--glass-border);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-premium);
+}
+
+.report-icon-container {
+    margin-bottom: 1.5rem;
+}
+
+.report-icon {
+    width: 100px;
+    height: 100px;
+    color: var(--color-primary); /* Uses the brand color for the stroke */
+    /* Add a drop shadow to the icon for a premium look */
+    filter: drop-shadow(0 4px 6px rgba(79, 70, 229, 0.2));
+}
+
+.report-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-dark);
+}
+
+.report-link-text {
+    font-size: 0.9rem;
+    color: var(--color-accent); /* Adding accent color */
+    opacity: 0.8;
+    transition: var(--transition-smooth);
+}
+
+.report-card:hover .report-link-text {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .reports-grid {
+        gap: 2rem;
+    }
+    
+    .report-icon {
+        width: 80px;
+        height: 80px;
+    }
+}
