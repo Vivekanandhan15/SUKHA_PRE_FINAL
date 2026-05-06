@@ -7,9 +7,9 @@ import ayushImg from '../assets/team/Ayush CFO.jpg';
 import sukanyaImg from '../assets/team/Sukanya HR.jpg';
 import vinsImg from '../assets/team/Vinnarasi - Core Team.jpg';
 import sripathyImg from '../assets/team/Sripathy - Core Team.jpeg';
-import vedhImg from '../assets/team/Vedh Core Team.PNG';
+import vedhImg from '../assets/team/Vedh Core Team.png';
 import abishekImg from '../assets/team/Abishek Core team.jpeg';
-import chetnaImg from '../assets/team/Chetna.PNG';
+import chetnaImg from '../assets/team/Chetna.png';
 import neethaImg from '../assets/team/Neetha Narresh.jpg';
 
 const Team = () => {

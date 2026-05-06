@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Board.css';
-import kavyaImg from '../assets/team/Kavya Co-Founder.PNG';
-import sanjanaImg from '../assets/team/Sanjana (Co-Founder).PNG';
+import kavyaImg from '../assets/team/Kavya Co-Founder.png';
+import sanjanaImg from '../assets/team/Sanjana (Co-Founder).png';
 
 const Board = () => {
     const [selectedMember, setSelectedMember] = useState(null);
