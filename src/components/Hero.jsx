@@ -8,16 +8,29 @@ const Hero = () => {
         <div className="hero-grid">
           <div className="hero-content">
             <h1 className="hero-title">
-              Bridging the gap Between <br />
-              <span className="gradient-text">Education & Employability</span>
+              Educurating a Better Tomorrow<br />
+      
             </h1>
             <p className="hero-subtitle">
-              Empowering the next generation with modern skills and real-world opportunities.
-              Join us in our mission to transform lives through education.
+              Empowering the next generation with modern skills and real-world opportunities. Join us in our mission to transform lives through education.
             </p>
             <div className="hero-cta">
-              <button className="btn btn-primary">Join as Volunteer</button>
-              <button className="btn btn-secondary">Join as Partner</button>
+              <a
+                href="https://forms.gle/CrSMZfiaiCrzD7iH9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                Join as Volunteer
+              </a>
+              <a
+                href="https://forms.gle/fHPrE8BhrYr7EeFU9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                Join as Partner
+              </a>
             </div>
             <div className="hero-stats glass-effect">
               <div className="stat-item">

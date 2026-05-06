@@ -8,17 +8,17 @@ const About = () => {
         {
             id: 'mission',
             title: 'Mission',
-            content: 'Our Mission is to create a safe space for students to learn, feel empowered and grow.. By providing students with the agency to be the most confident version of themselves possible, Sukha seeks to empower individuals to become their best.'
+            content: 'Our mission is to empower students through quality education, fostering innovation and leadership in the next generation.'
         },
         {
             id: 'vision',
             title: 'Vision',
-            content: 'Our Vision is to bridge the English communication divide by enabling a supportive ecosystem for all.'
+            content: 'To be a global leader in educational excellence, creating a world where every child has the opportunity to thrive and succeed.'
         },
         {
             id: 'culture',
             title: 'Culture',
-            content: 'Our Culture and the basis of our foundation are feedback from our students and their communication with us, which allows a comfortable feedback loop where we can aid students more efficiently.. Kindness is crucial as it creates a much better learning atmosphere to build connections between teacher and student.Our Culture and the basis of our foundation are feedback from our students and their communication with us, which allows a comfortable feedback loop where we can aid students more efficiently.. Kindness is crucial as it creates a much better learning atmosphere to build connections between teacher and student.'
+            content: 'We cultivate an environment of inclusivity, curiosity, and respect, where diversity is celebrated and collaboration is key.'
         }
     ];
 
@@ -62,13 +62,10 @@ const About = () => {
                             <div className="placeholder-box" style={{ height: '200px' }}>Educational Impact</div>
                         </div>
                         <p className="mt-md">
-                            Sukha Education Foundation was born from a simple belief: that education is the most powerful tool to change the world.
-                            What started as a small community initiative has grown into a multi-faceted organization dedicated to breaking barriers
-                            and building futures.
+                            Sukha Education Foundation was born from a simple belief: that education is the most powerful tool to change the world. What started as a small community initiative has grown into a multi-faceted organization dedicated to breaking barriers and building futures.
                         </p>
                         <p className="mt-sm">
-                            We focus on holistic development, ensuring that our students are not just academically proficient, but also socially
-                            conscious and emotionally resilient.
+                            We focus on holistic development, ensuring that our students are not just academically proficient, but also socially conscious and emotionally resilient.
                         </p>
                     </div>
 

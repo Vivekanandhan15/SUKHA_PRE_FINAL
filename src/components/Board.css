@@ -14,10 +14,9 @@
     max-width: 600px;
     background: white;
     border-radius: var(--radius-xl);
-    padding: var(--spacing-lg);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
     text-align: center;
     cursor: pointer;
     transition: var(--transition-smooth);
@@ -35,13 +34,23 @@
     box-shadow: var(--shadow-premium);
 }
 
-.pic-circle {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
+.director-visual {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
     margin-bottom: var(--spacing-md);
-    background: var(--color-bg-light);
-    border: 2px dashed var(--color-primary);
+}
+
+.pic-circle {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.director-info {
+    padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
 }
 
 .name-desig h3 {

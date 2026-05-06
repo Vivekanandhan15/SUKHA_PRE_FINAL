@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Board.css';
+import kavyaImg from '../assets/team/Kavya Co-Founder.PNG';
+import sanjanaImg from '../assets/team/Sanjana (Co-Founder).PNG';
 
 const Board = () => {
     const [selectedMember, setSelectedMember] = useState(null);
@@ -9,14 +11,18 @@ const Board = () => {
             id: 1,
             name: 'Kavya',
             role: 'Co-Founder',
+            image: kavyaImg,
+            imgPosition: 'center',
             content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquid nihil numquam expedita ipsam dolorem ullam nulla quam architecto praesentium.',
             linkedin: '#'
         },
-        
+
         {
             id: 2,
             name: 'Sanjana',
             role: 'Co-Founder',
+            image: sanjanaImg,
+            imgPosition: 'top',
             content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquid nihil numquam expedita ipsam dolorem ullam nulla quam architecto praesentium.',
             linkedin: '#'
         }
@@ -38,7 +44,12 @@ const Board = () => {
                             onClick={() => setSelectedMember(selectedMember === director.id ? null : director.id)}
                         >
                             <div className="director-visual">
-                                <div className="pic-circle placeholder-box">Pic</div>
+                                <img
+                                    src={director.image}
+                                    alt={director.name}
+                                    className="pic-circle"
+                                    style={{ objectPosition: director.imgPosition || 'center' }}
+                                />
                             </div>
 
                             <div className="director-info">

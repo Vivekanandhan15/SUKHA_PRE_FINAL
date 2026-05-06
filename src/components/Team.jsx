@@ -1,16 +1,29 @@
 import React from 'react';
 import './Team.css';
 
+import nikitaImg from '../assets/team/Nikita Co-COO.jpg';
+import shivaImg from '../assets/team/Shiva Chandrika Co-COO.png';
+import ayushImg from '../assets/team/Ayush CFO.jpg';
+import sukanyaImg from '../assets/team/Sukanya HR.jpg';
+import vinsImg from '../assets/team/Vinnarasi - Core Team.jpg';
+import sripathyImg from '../assets/team/Sripathy - Core Team.jpeg';
+import vedhImg from '../assets/team/Vedh Core Team.PNG';
+import abishekImg from '../assets/team/Abishek Core team.jpeg';
+import chetnaImg from '../assets/team/Chetna.PNG';
+import neethaImg from '../assets/team/Neetha Narresh.jpg';
+
 const Team = () => {
     const members = [
-        { name: 'Niki', role: 'Co - COO' },
-        { name: 'Shiva', role: 'Co - COO' },
-        { name: 'Ayush', role: 'CFO' },
-        { name: 'Sukanya', role: 'HR' },
-        { name: 'Vins', role: 'Core Team' },
-        { name: 'Abi', role: 'Core Team' },
-        { name: 'Sripathy', role: 'Core Team' },
-        { name: 'Chetna', role: 'Content Head' },
+        { name: 'Nikita', role: 'Co-COO', image: nikitaImg },
+        { name: 'Shiva Chandrika', role: 'Co-COO', image: shivaImg },
+        { name: 'Ayush', role: 'CFO', image: ayushImg },
+        { name: 'Sukanya', role: 'HR', image: sukanyaImg },
+        { name: 'Neetha Narresh', role: 'Core Team', image: neethaImg },
+        { name: 'Vinnarasi', role: 'Core Team', image: vinsImg },
+        { name: 'Sripathy', role: 'Core Team', image: sripathyImg },
+        { name: 'Abishek', role: 'Core Team', image: abishekImg },
+        { name: 'Vedh', role: 'Core Team', image: vedhImg },
+        { name: 'Chetna', role: 'Content Head', image: chetnaImg },
     ];
 
     return (
@@ -24,9 +37,11 @@ const Team = () => {
                     {members.map((member, index) => (
                         <div key={index} className="team-card glass-effect">
                             <div className="member-image-container">
-                                <div className="member-image placeholder-box">
-                                    <span>Photo</span>
-                                </div>
+                                <img
+                                    src={member.image}
+                                    alt={member.name}
+                                    className="member-image"
+                                />
                             </div>
                             <div className="member-info">
                                 <h3>{member.name}</h3>

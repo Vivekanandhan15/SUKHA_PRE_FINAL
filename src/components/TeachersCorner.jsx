@@ -9,6 +9,7 @@ const TeachersCorner = () => {
         { q: 'What are the required qualifications?', a: 'A graduate degree and a passion for rural education are our primary requirements.' },
         { q: 'Do you offer remote teaching opportunities?', a: 'Yes, we have several digital literacy programs that can be taught remotely.' },
         { q: 'Is there a training period for new teachers?', a: 'Yes, every teacher undergoes a 2-week orientation program before starting.' },
+        { q: 'Do you provide certificates and what is the refund policy?', a: 'Yes, we provide official certificates upon course completion. Regarding our refund policy, please contact our support team for detailed terms and conditions.' },
     ];
 
     return (

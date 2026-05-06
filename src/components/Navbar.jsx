@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -33,6 +34,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="container navbar-content">
                 <div className="brand">
+                    <img src={logo} alt="Sukha Education Logo" className="navbar-logo" />
                     <h1 className="logo-text">Sukha Education <br /> Foundation</h1>
                 </div>
                 <ul className="nav-menu">

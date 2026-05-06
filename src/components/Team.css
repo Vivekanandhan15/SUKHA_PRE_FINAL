@@ -47,6 +47,9 @@
     width: 100%;
     aspect-ratio: 1;
     border-radius: 20px;
+    object-fit: cover;
+    object-position: top;
+    display: block;
 }
 
 .member-info h3 {

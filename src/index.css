@@ -1,21 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  /* Brand Color Palette - Vibrant Indigo & Ocean (Modern premium look) */
-  --color-primary: #4F46E5;
-  /* Deep Indigo - Professional & Trustworthy */
-  --color-accent: #0EA5E9;
-  /* Sky Blue - Fresh & Dynamic */
-  --color-bg-light: #F8FAFC;
-  /* Crisp Slate-tinted Pearl */
+  /* Brand Color Palette - Mauve & Charcoal (Extracted from logo) */
+  --color-primary: #C28EB2;
+  /* Mauve - Sophisticated & Soft */
+  --color-accent: #E2C0D4;
+  /* Light Rose - Complementary */
+  --color-bg-light: #FBF7F9;
+  /* Subtle Pink-tinted Off-white */
   --color-bg-card: #FFFFFF;
-  --color-text-dark: #0F172A;
-  /* Rich Slate */
-  --color-text-muted: #64748B;
-  /* Muted Slate */
+  --color-text-dark: #5B5554;
+  /* Charcoal - Grounded & Professional */
+  --color-text-muted: #8E8685;
+  /* Muted Charcoal */
   --color-white: #ffffff;
 
   /* Typography */
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
   --font-heading: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
 
@@ -27,12 +31,12 @@
   --spacing-xl: 8rem;
 
   /* Effects */
-  --glass-bg: rgba(255, 255, 255, 0.7);
-  --glass-border: rgba(79, 70, 229, 0.15);
-  /* Indigo tinted border */
-  --glass-blur: blur(12px);
-  --shadow-premium: 0 10px 30px rgba(15, 23, 42, 0.08);
-  /* Slate tinted shadow */
+  --glass-bg: rgba(255, 255, 255, 0.75);
+  --glass-border: rgba(194, 142, 178, 0.2);
+  /* Mauve tinted border */
+  --glass-blur: blur(16px);
+  --shadow-premium: 0 10px 30px rgba(91, 85, 84, 0.1);
+  /* Charcoal tinted shadow */
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --radius-xl: 24px;
 
