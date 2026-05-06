@@ -1,16 +1,16 @@
 import React from 'react';
 import './Team.css';
 
-import nikitaImg from '../assets/team/Nikita Co-COO.jpg';
-import shivaImg from '../assets/team/Shiva Chandrika Co-COO.png';
-import ayushImg from '../assets/team/Ayush CFO.jpg';
-import sukanyaImg from '../assets/team/Sukanya HR.jpg';
-import vinsImg from '../assets/team/Vinnarasi - Core Team.jpg';
-import sripathyImg from '../assets/team/Sripathy - Core Team.jpeg';
-import vedhImg from '../assets/team/Vedh Core Team.png';
-import abishekImg from '../assets/team/Abishek Core team.jpeg';
-import chetnaImg from '../assets/team/Chetna.png';
-import neethaImg from '../assets/team/Neetha Narresh.jpg';
+import nikitaImg from '../assets/Team/Nikita Co-COO.jpg';
+import shivaImg from '../assets/Team/Shiva Chandrika Co-COO.png';
+import ayushImg from '../assets/Team/Ayush CFO.jpg';
+import sukanyaImg from '../assets/Team/Sukanya HR.jpg';
+import vinsImg from '../assets/Team/Vinnarasi - Core Team.jpg';
+import sripathyImg from '../assets/Team/Sripathy - Core Team.jpeg';
+import vedhImg from '../assets/Team/Vedh Core Team.png';
+import abishekImg from '../assets/Team/Abishek Core team.jpeg';
+import chetnaImg from '../assets/Team/Chetna.png';
+import neethaImg from '../assets/Team/Neetha Narresh.jpg';
 
 const Team = () => {
     const members = [

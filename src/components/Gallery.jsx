@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './Gallery.css';
 
 // Importing gallery images
-import btcImg from '../assets/gallery/BTC.jpg';
-import bookClub1Img from '../assets/gallery/BookCLub1.jpeg';
-import bookClub2Img from '../assets/gallery/BookClub2.jpeg';
-import d2d1Img from '../assets/gallery/D2D1.jpg';
-import d2d2Img from '../assets/gallery/D2D2.jpg';
-import d2d3Img from '../assets/gallery/D2d3.jpg';
-import englishProgramImg from '../assets/gallery/English_Program.jpeg';
+import btcImg from '../assets/Gallery/BTC.jpg';
+import bookClub1Img from '../assets/Gallery/BookCLub1.jpeg';
+import bookClub2Img from '../assets/Gallery/BookClub2.jpeg';
+import d2d1Img from '../assets/Gallery/D2D1.jpg';
+import d2d2Img from '../assets/Gallery/D2D2.jpg';
+import d2d3Img from '../assets/Gallery/D2d3.jpg';
+import englishProgramImg from '../assets/Gallery/English_Program.jpeg';
 
 const Gallery = () => {
     const [filter, setFilter] = useState('All');
