@@ -57,13 +57,9 @@ const Gallery = () => {
                                     <div className="gallery-image-container">
                                         <img 
                                             src={item.image} 
-                                            alt={item.label} 
+                                            alt={item.category} 
                                             className="gallery-image"
                                         />
-                                    </div>
-                                    <div className="gallery-item-info">
-                                        <span className="category-tag">{item.category}</span>
-                                        <h4 className="item-label">{item.label}</h4>
                                     </div>
                                 </div>
                             ))}

@@ -40,15 +40,19 @@
 }
 
 .member-image-container {
+    width: 100%;
+    aspect-ratio: 3 / 4;
     margin-bottom: var(--spacing-md);
+    border-radius: 20px;
+    overflow: hidden;
+    background: #f3eeef;
 }
 
 .member-image {
     width: 100%;
-    aspect-ratio: 1;
-    border-radius: 20px;
+    height: 100%;
     object-fit: cover;
-    object-position: top;
+    object-position: center 20%;
     display: block;
 }
 

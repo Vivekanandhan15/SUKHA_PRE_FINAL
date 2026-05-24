@@ -84,14 +84,21 @@
 }
 
 .social-icon {
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.875rem;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.85);
     transition: var(--transition-smooth);
     text-decoration: none;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1rem;
-    border-radius: var(--radius-md);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
 }
 
 .social-icon:hover {

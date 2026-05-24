@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './About.css';
+import educationalImpactImg from '../assets/educational-impact/Educational-impact.jpeg';
 
 const About = () => {
     const [activeAccordion, setActiveAccordion] = useState('mission');
@@ -35,7 +36,6 @@ const About = () => {
                 <h2 className="section-title text-center mb-lg">Our Story</h2>
 
                 <div className="story-grid">
-                    {/* Left: Expandable List */}
                     <div className="story-accordion">
                         {accordionData.map((item) => (
                             <div
@@ -56,10 +56,13 @@ const About = () => {
                         ))}
                     </div>
 
-                    {/* Middle: Text Block */}
                     <div className="story-text-block glass-effect">
-                        <div className="story-image-placeholder">
-                            <div className="placeholder-box" style={{ height: '200px' }}>Educational Impact</div>
+                        <div className="story-image-wrap">
+                            <img
+                                src={educationalImpactImg}
+                                alt="Educational impact at Sukha Education Foundation"
+                                className="story-impact-image"
+                            />
                         </div>
                         <p className="mt-md">
                             Sukha Education Foundation was born from a simple belief: that education is the most powerful tool to change the world. What started as a small community initiative has grown into a multi-faceted organization dedicated to breaking barriers and building futures.
@@ -69,7 +72,6 @@ const About = () => {
                         </p>
                     </div>
 
-                    {/* Right: Up to Down Timeline */}
                     <div className="story-timeline">
                         <div className="timeline-track"></div>
                         {timelineData.map((item, index) => (

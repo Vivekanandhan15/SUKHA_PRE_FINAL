@@ -44,9 +44,9 @@ const Reports = () => {
         },
         {
             id: 2,
-            title: 'Overview',
-            type: 'search',
-            link: '#'
+            title: "Founders' Note",
+            type: 'document',
+            link: 'https://docs.google.com/document/d/1U7nxnUPW89HNHyWWOFUe49a0cTBqYCwLzvBub5fI3tE/edit?tab=t.0'
         },
         {
             id: 3,
@@ -79,7 +79,13 @@ const Reports = () => {
                 
                 <div className="reports-grid">
                     {reportsData.map((report) => (
-                        <a key={report.id} href={report.link} className="report-card">
+                        <a
+                            key={report.id}
+                            href={report.link}
+                            className="report-card"
+                            target={report.link.startsWith('http') ? '_blank' : undefined}
+                            rel={report.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                        >
                             <div className="report-icon-container">
                                 {renderIcon(report.type)}
                             </div>

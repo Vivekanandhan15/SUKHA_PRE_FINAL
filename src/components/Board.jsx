@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Board.css';
 import kavyaImg from '../assets/Team/Kavya Co-Founder.png';
 import sanjanaImg from '../assets/Team/Sanjana (Co-Founder).png';
 
 const Board = () => {
-    const [selectedMember, setSelectedMember] = useState(null);
-
     const directors = [
         {
             id: 1,
@@ -16,7 +14,6 @@ const Board = () => {
             content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aliquid nihil numquam expedita ipsam dolorem ullam nulla quam architecto praesentium.',
             linkedin: '#'
         },
-
         {
             id: 2,
             name: 'Sanjana',
@@ -38,11 +35,7 @@ const Board = () => {
 
                 <div className="board-grid">
                     {directors.map((director) => (
-                        <div
-                            key={director.id}
-                            className={`director-card clickable-box ${selectedMember === director.id ? 'active' : ''}`}
-                            onClick={() => setSelectedMember(selectedMember === director.id ? null : director.id)}
-                        >
+                        <div key={director.id} className="director-card">
                             <div className="director-visual">
                                 <img
                                     src={director.image}
@@ -58,16 +51,15 @@ const Board = () => {
                                     <p className="role-tag">{director.role}</p>
                                 </div>
 
-                                <div className={`director-bio ${selectedMember === director.id ? 'show' : ''}`}>
+                                {/* Bio expand — disabled for now
+                                <div className="director-bio">
                                     <p>{director.content}</p>
                                     <a href={director.linkedin} className="linkedin-link mt-sm">
                                         View Professional Profile →
                                     </a>
                                 </div>
-
-                                <div className="click-hint">
-                                    {selectedMember === director.id ? 'Click to Close' : 'Click to read bio'}
-                                </div>
+                                <div className="click-hint">Click to read bio</div>
+                                */}
                             </div>
                         </div>
                     ))}

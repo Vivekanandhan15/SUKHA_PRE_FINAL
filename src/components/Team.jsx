@@ -10,20 +10,18 @@ import sripathyImg from '../assets/Team/Sripathy - Core Team.jpeg';
 import vedhImg from '../assets/Team/Vedh Core Team.png';
 import abishekImg from '../assets/Team/Abishek Core team.jpeg';
 import chetnaImg from '../assets/Team/Chetna.png';
-import neethaImg from '../assets/Team/Neetha Narresh.jpg';
 
 const Team = () => {
     const members = [
-        { name: 'Nikita', role: 'Co-COO', image: nikitaImg },
-        { name: 'Shiva Chandrika', role: 'Co-COO', image: shivaImg },
-        { name: 'Ayush', role: 'CFO', image: ayushImg },
-        { name: 'Sukanya', role: 'HR', image: sukanyaImg },
-        { name: 'Neetha Narresh', role: 'Core Team', image: neethaImg },
-        { name: 'Vinnarasi', role: 'Core Team', image: vinsImg },
-        { name: 'Sripathy', role: 'Core Team', image: sripathyImg },
-        { name: 'Abishek', role: 'Core Team', image: abishekImg },
-        { name: 'Vedh', role: 'Core Team', image: vedhImg },
-        { name: 'Chetna', role: 'Content Head', image: chetnaImg },
+        { name: 'Nikitha', role: 'Co-COO', image: nikitaImg, objectPosition: 'center 15%' },
+        { name: 'Shiva Chandrika', role: 'Co-COO', image: shivaImg, objectPosition: 'center 20%' },
+        { name: 'Ayush', role: 'CFO', image: ayushImg, objectPosition: 'center 20%' },
+        { name: 'Sukanya', role: 'HR', image: sukanyaImg, objectPosition: 'center 25%' },
+        { name: 'Vinnarasi', role: 'Core Team', image: vinsImg, objectPosition: 'center 20%' },
+        { name: 'Sripathy', role: 'Core Team', image: sripathyImg, objectPosition: 'center 25%' },
+        { name: 'Abishek', role: 'Core Team', image: abishekImg, objectPosition: 'center 20%' },
+        { name: 'Vedh', role: 'Core Team', image: vedhImg, objectPosition: 'center 20%' },
+        { name: 'Chetna', role: 'Content Head', image: chetnaImg, objectPosition: 'center 25%' },
     ];
 
     return (
@@ -41,6 +39,7 @@ const Team = () => {
                                     src={member.image}
                                     alt={member.name}
                                     className="member-image"
+                                    style={{ objectPosition: member.objectPosition }}
                                 />
                             </div>
                             <div className="member-info">

@@ -61,6 +61,23 @@
     border-radius: var(--radius-xl);
 }
 
+.story-image-wrap {
+    border-radius: 20px;
+    overflow: hidden;
+    line-height: 0;
+    box-shadow: 0 8px 24px rgba(91, 85, 84, 0.08);
+}
+
+.story-impact-image {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border-radius: 20px;
+}
+
 .story-text-block p {
     font-size: 1.1rem;
     color: var(--color-text-dark);
