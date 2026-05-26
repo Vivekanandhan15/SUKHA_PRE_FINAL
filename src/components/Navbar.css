@@ -90,11 +90,26 @@
     background: rgba(194, 142, 178, 0.08);
 }
 
-.nav-link-contact {
+.nav-link-contact,
+.nav-link-section {
     font-family: inherit;
     border: none;
     cursor: pointer;
     background: transparent;
+    width: 100%;
+    text-align: left;
+}
+
+@media (min-width: 1025px) {
+    .nav-link-section {
+        width: auto;
+        text-align: center;
+    }
+
+    .nav-link-contact {
+        width: auto;
+        text-align: center;
+    }
 }
 
 .mobile-toggle {

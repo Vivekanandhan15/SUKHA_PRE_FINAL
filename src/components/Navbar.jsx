@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 
@@ -7,7 +7,7 @@ const Navbar = ({ onContactClick }) => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const location = useLocation();
-    const isHome = location.pathname === '/';
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,7 +19,7 @@ const Navbar = ({ onContactClick }) => {
 
     useEffect(() => {
         setMenuOpen(false);
-    }, [location.pathname]);
+    }, [location.pathname, location.hash]);
 
     useEffect(() => {
         document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -40,17 +40,30 @@ const Navbar = ({ onContactClick }) => {
 
     const closeMenu = () => setMenuOpen(false);
 
-    const sectionHref = (hash) => (isHome ? hash : `/${hash}`);
+    const scrollToSection = (hash) => {
+        const id = hash.replace('#', '');
+        closeMenu();
+
+        if (location.pathname === '/') {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            window.history.replaceState(null, '', `/#${id}`);
+        } else {
+            navigate({ pathname: '/', hash: `#${id}` });
+        }
+    };
 
     const navLinks = [
-        { name: 'Home', to: '/' },
-        { name: 'About', to: sectionHref('#about') },
-        { name: 'Courses', to: sectionHref('#courses') },
+        { name: 'Home', to: '/', route: true },
+        { name: 'About', hash: '#about' },
+        { name: 'Courses', hash: '#courses' },
         { name: 'Student blog', to: '/blog', route: true },
         { name: 'Teachers Corner', to: '/teachers-corner', route: true },
-        { name: 'Gallery', to: sectionHref('#gallery') },
-        { name: 'Reports', to: sectionHref('#reports') },
-        { name: 'Join us', to: sectionHref('#join') },
+        { name: 'Gallery', hash: '#gallery' },
+        { name: 'Reports', hash: '#reports' },
+        { name: 'Join us', hash: '#join' },
     ];
 
     const handleContactClick = (e) => {
@@ -59,10 +72,19 @@ const Navbar = ({ onContactClick }) => {
         onContactClick?.();
     };
 
+    const handleHomeClick = (e) => {
+        closeMenu();
+        if (location.pathname === '/') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.history.replaceState(null, '', '/');
+        }
+    };
+
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
             <div className="container navbar-content">
-                <Link to="/" className="brand" onClick={closeMenu}>
+                <Link to="/" className="brand" onClick={handleHomeClick}>
                     <img src={logo} alt="Sukha Education Logo" className="navbar-logo" />
                     <span className="logo-text">Sukha Education <br /> Foundation</span>
                 </Link>
@@ -98,9 +120,13 @@ const Navbar = ({ onContactClick }) => {
                                     {link.name}
                                 </Link>
                             ) : (
-                                <a href={link.to} className="nav-link" onClick={closeMenu}>
+                                <button
+                                    type="button"
+                                    className="nav-link nav-link-section"
+                                    onClick={() => scrollToSection(link.hash)}
+                                >
                                     {link.name}
-                                </a>
+                                </button>
                             )}
                         </li>
                     ))}

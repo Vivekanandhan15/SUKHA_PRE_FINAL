@@ -3,21 +3,47 @@
   margin: 0 auto;
 }
 
+/* Side-by-side layout: articles on the left, FAQ on the right */
+.teachers-content-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+/* Articles column */
+.teachers-articles-col {
+  /* let the blog-list-grid inside handle its own columns */
+}
+
 .teachers-articles-grid {
-  margin-bottom: var(--spacing-xl);
+  /* override the default 2-col blog grid — stack cards in 1 col inside this column */
+  grid-template-columns: 1fr !important;
+  margin-bottom: 0;
 }
 
-.teachers-faq-section {
-  padding-top: var(--spacing-lg);
-  border-top: 1px solid rgba(194, 142, 178, 0.15);
+/* FAQ column — sticky so it stays visible while scrolling articles */
+.teachers-faq-col {
+  position: sticky;
+  top: 6rem;
 }
 
-.teachers-faq-heading {
-  margin-bottom: var(--spacing-lg);
+.teachers-faq-col .faq-title {
   font-size: 2rem;
+  margin-bottom: var(--spacing-md);
 }
 
-.teachers-faq-layout {
-  max-width: 800px;
-  margin: 0 auto;
+/* Responsive: stack on tablet and below */
+@media (max-width: 900px) {
+  .teachers-content-row {
+    grid-template-columns: 1fr;
+  }
+
+  .teachers-faq-col {
+    position: static;
+  }
+
+  .teachers-articles-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  }
 }

@@ -24,6 +24,16 @@
     background: transparent;
     transition: var(--transition-smooth);
     border: 1px solid transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Button variant – reset browser defaults so it looks like the link cards */
+.report-card-btn {
+    font-family: inherit;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
 .report-card:hover {

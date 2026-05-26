@@ -1,0 +1,103 @@
+.founder-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 20, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    animation: overlayFadeIn 0.3s ease;
+}
+
+@keyframes overlayFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.founder-modal-content {
+    position: relative;
+    background: var(--color-bg-card, #fff);
+    border-radius: 1.5rem;
+    border: 1px solid var(--glass-border, rgba(200,180,210,0.25));
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    max-width: 640px;
+    width: 100%;
+    padding: 3rem 3.5rem;
+    animation: modalSlideIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@keyframes modalSlideIn {
+    from { opacity: 0; transform: translateY(32px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.founder-modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: var(--color-text-muted, #888);
+    cursor: pointer;
+    padding: 0.4rem 0.6rem;
+    border-radius: 50%;
+    transition: background 0.2s, color 0.2s;
+    line-height: 1;
+}
+
+.founder-modal-close:hover {
+    background: rgba(0,0,0,0.07);
+    color: var(--color-text-dark, #111);
+}
+
+.founder-modal-header {
+    margin-bottom: 2rem;
+}
+
+.founder-modal-eyebrow {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-primary, #c28eb2);
+    margin-bottom: 1rem;
+}
+
+.founder-modal-divider {
+    height: 2px;
+    width: 48px;
+    background: var(--color-primary, #c28eb2);
+    border-radius: 2px;
+}
+
+.founder-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.15rem;
+}
+
+.founder-modal-body p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--color-text-muted, #555);
+    margin: 0;
+}
+
+.founder-modal-body em {
+    color: var(--color-primary, #c28eb2);
+    font-style: italic;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .founder-modal-content {
+        padding: 2rem 1.5rem;
+    }
+}

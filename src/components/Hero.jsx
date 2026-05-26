@@ -37,7 +37,7 @@ const Hero = () => {
   const closeVideo = () => setVideoOpen(false);
 
   return (
-    <section className="hero-section">
+    <section className="hero-section" id="join">
       <div className="container hero-container">
         <div className="hero-grid">
           <div className="hero-content">

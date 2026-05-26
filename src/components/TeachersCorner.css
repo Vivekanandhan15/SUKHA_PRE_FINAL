@@ -2,44 +2,11 @@
     background-color: var(--color-bg-light);
 }
 
-.teachers-layout {
-    display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
-    gap: var(--spacing-lg);
-    align-items: start;
-}
-
-.teacher-featured {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-md);
-}
-
-.teacher-card {
-    padding: var(--spacing-sm);
-    border-radius: var(--radius-xl);
-    background: white;
-}
-
-.teacher-meta-badges {
-    display: flex;
-    gap: 10px;
-    margin-top: var(--spacing-sm);
-}
-
-.badge {
-    padding: 4px 12px;
-    background: var(--color-bg-light);
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    border: 1px solid rgba(194, 142, 178, 0.1);
-}
-
-/* FAQ Styling (Wireframe Style) */
-.faq-section {
-    padding-left: var(--spacing-md);
+/* FAQ — full width, no side-by-side */
+.faq-full {
+    max-width: 860px;
+    margin: 0 auto;
+    padding-left: 0;
 }
 
 .faq-title {
@@ -47,7 +14,6 @@
     margin-bottom: var(--spacing-md);
     color: var(--color-text-dark);
     font-weight: 400;
-    /* Matching simple wireframe font weight */
 }
 
 .faq-list {
@@ -95,19 +61,42 @@
     line-height: 1.6;
 }
 
-@media (max-width: 1024px) {
-    .teachers-layout {
-        grid-template-columns: 1fr;
-    }
+/* Teacher story cards — appear below FAQ only when entries exist */
+.teacher-stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+}
 
-    .faq-section {
-        padding-left: 0;
-        margin-top: var(--spacing-lg);
-    }
+.teacher-card {
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-xl);
+    background: white;
+}
+
+.teacher-meta-badges {
+    display: flex;
+    gap: 10px;
+    margin-top: var(--spacing-sm);
+}
+
+.badge {
+    padding: 4px 12px;
+    background: var(--color-bg-light);
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    border: 1px solid rgba(194, 142, 178, 0.1);
 }
 
 @media (max-width: 768px) {
-    .teacher-featured {
+    .faq-title {
+        font-size: 2rem;
+    }
+
+    .teacher-stories-grid {
         grid-template-columns: 1fr;
     }
 }

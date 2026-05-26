@@ -18,23 +18,24 @@ const Footer = () => {
         <footer className="main-footer">
             <div className="container footer-content">
                 <div className="footer-brand">
-                    <h2 className="gradient-text">Sukha Education</h2>
+                    <h2 className="gradient-text">Sukha Education Foundation</h2>
                     <p>Empowering the next generation through quality education, innovation, and leadership.</p>
                 </div>
                 <div className="footer-links">
                     <div className="link-group">
                         <h4>Organization</h4>
                         <ul>
-                            <li><a href="#about">Our Story</a></li>
-                            <li><a href="#board">Board of Directors</a></li>
-                            <li><a href="#team">The Team</a></li>
+                            <li><a href="/#about">Our Story</a></li>
+                            <li><a href="/#board">Board of Directors</a></li>
+                            <li><a href="/#team">The Team</a></li>
                         </ul>
                     </div>
                     <div className="link-group">
                         <h4>Impact</h4>
                         <ul>
-                            <li><a href="#courses">Programs</a></li>
-                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="/#courses">Programs</a></li>
+                            <li><a href="/#gallery">Gallery</a></li>
+                            <li><a href="/#join">Join Us</a></li>
                             <li><a href="/teachers-corner">Teachers Corner</a></li>
                             <li><a href="/blog">Student Blog</a></li>
                         </ul>

@@ -33,7 +33,10 @@ const Team = () => {
                 </div>
                 <div className="team-grid">
                     {members.map((member, index) => (
-                        <div key={index} className="team-card glass-effect">
+                        <div
+                            key={index}
+                            className={`team-card glass-effect${index === members.length - 1 ? ' team-card--solo' : ''}`}
+                        >
                             <div className="member-image-container">
                                 <img
                                     src={member.image}
