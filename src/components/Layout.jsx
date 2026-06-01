@@ -41,7 +41,7 @@ const Layout = () => {
       <main style={{ marginTop: 'var(--header-height)' }}>
         <Outlet />
       </main>
-      <Footer />
+      <Footer onJoinUsClick={() => setJoinUsOpen(true)} />
     </div>
   );
 };

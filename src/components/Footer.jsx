@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import logo from '../assets/logo.png';
 
@@ -14,7 +15,7 @@ const LinkedInIcon = () => (
     </svg>
 );
 
-const Footer = () => {
+const Footer = ({ onJoinUsClick = () => {} }) => {
     return (
         <footer className="main-footer">
             <div className="container footer-content">
@@ -37,11 +38,19 @@ const Footer = () => {
                     <div className="link-group">
                         <h4>Impact</h4>
                         <ul>
-                            <li><a href="/#courses">Programs</a></li>
-                            <li><a href="/#gallery">Gallery</a></li>
-                            <li><a href="/#join">Join Us</a></li>
-                            <li><a href="/teachers-corner">Teachers Corner</a></li>
-                            <li><a href="/blog">Student Blog</a></li>
+                            <li><Link to="/#courses">Programs</Link></li>
+                            <li><Link to="/#gallery">Gallery</Link></li>
+                            <li>
+                                <button
+                                    type="button"
+                                    className="footer-button-link"
+                                    onClick={onJoinUsClick}
+                                >
+                                    Join Us
+                                </button>
+                            </li>
+                            <li><Link to="/teachers-corner">Teachers Corner</Link></li>
+                            <li><Link to="/blog">Student Blog</Link></li>
                         </ul>
                     </div>
                     <div className="link-group">

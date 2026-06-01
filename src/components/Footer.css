@@ -65,12 +65,24 @@
 }
 
 .link-group ul li a,
-.link-group ul li span {
+.link-group ul li span,
+.link-group ul li .footer-button-link {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.95rem;
+    text-decoration: none;
 }
 
-.link-group ul li a:hover {
+.link-group ul li .footer-button-link {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+}
+
+.link-group ul li a:hover,
+.link-group ul li .footer-button-link:hover {
     color: var(--color-primary);
 }
 
