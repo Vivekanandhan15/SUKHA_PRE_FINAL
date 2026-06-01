@@ -15,11 +15,11 @@ const TeachersCorner = () => {
         },
         {
             q: 'Do you offer remote teaching opportunities?',
-            a: 'No, we do not offer any remote teaching opportunities. But if you are interested in contributing for non-teaching remote opportunities, email us at educationsukha@gmail.com or reach out to us on Instagram/LinkedIn.'
+            a: 'No, we do not offer any remote teaching opportunities. But if you are interested in contributing for non-teaching remote opportunities, email us at educationsukha@gmail.com or reach out to us on Instagram/LinkedIn. '
         },
         {
             q: 'Is there a training period for new teachers?',
-            a: 'Yes, all teacher mentors will be trained in the orientation, followed by monthly online/offline sessions. Additionally, some classes will be observed and helpful feedback will be shared to make you a better mentor.'
+            a: 'Yes, all teacher mentors will be trained in the orientation, followed by monthly online/offline sessions. Additionally, some classes will be observed and helpful feedback will be shared to make you a better mentor. '
         },
         {
             q: 'Do you provide certificates?',
@@ -27,7 +27,7 @@ const TeachersCorner = () => {
         },
         {
             q: 'Do you provide reimbursements for transport?',
-            a: 'Yes, we offer some reimbursement for transportation and printing expenses incurred during the program. Details regarding eligibility, reimbursement limits, and the process will be shared during the orientation session.'
+            a: 'We offer reimbursements only for printing expenses incurred during the program. The process will be explained during the orientation session.'
         },
     ];
 
@@ -46,7 +46,7 @@ const TeachersCorner = () => {
     return (
         <section id="teachers" className="teachers-section section-padding">
             <div className="container">
-                <h2 className="section-title text-center mb-lg">Teachers Corner</h2>
+                <h2 className="section-title text-center mb-lg">Teacher's Corner</h2>
 
                 {/* FAQ — always full-width */}
                 <div className="faq-section faq-full">

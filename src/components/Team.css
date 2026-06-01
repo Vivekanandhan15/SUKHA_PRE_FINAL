@@ -20,7 +20,7 @@
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
 }
 
@@ -70,30 +70,14 @@
     letter-spacing: 0.05em;
 }
 
-/* Center last member when alone on a row (e.g. Chetna on 4-column grid) */
-.team-card--solo {
-    grid-column: 1 / -1;
-    justify-self: center;
-    width: 100%;
-    max-width: min(280px, calc((100% - 3 * var(--spacing-md)) / 4));
-}
-
 @media (max-width: 1024px) {
     .team-grid {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .team-card--solo {
-        max-width: min(320px, calc((100% - var(--spacing-md)) / 2));
     }
 }
 
 @media (max-width: 600px) {
     .team-grid {
         grid-template-columns: 1fr;
-    }
-
-    .team-card--solo {
-        max-width: min(320px, 100%);
     }
 }

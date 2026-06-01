@@ -40,7 +40,7 @@ const TeachersCornerPage = () => {
       <div className="container">
         <div className="teachers-page-header text-center mb-lg">
           <h1 className="section-title">
-            Teachers <span className="gradient-text">Corner</span>
+            Teacher's <span className="gradient-text">Corner</span>
           </h1>
           <p className="section-subtitle">
             Stories and reflections from educators and volunteers partnering with Sukha.

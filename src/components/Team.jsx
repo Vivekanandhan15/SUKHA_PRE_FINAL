@@ -16,11 +16,11 @@ const Team = () => {
         { name: 'Nikitha', role: 'Co-COO', image: nikitaImg, objectPosition: 'center 15%' },
         { name: 'Shiva Chandrika', role: 'Co-COO', image: shivaImg, objectPosition: 'center 20%' },
         { name: 'Ayush', role: 'CFO', image: ayushImg, objectPosition: 'center 20%' },
-        { name: 'Sukanya', role: 'HR', image: sukanyaImg, objectPosition: 'center 25%' },
         { name: 'Vinnarasi', role: 'Core Team', image: vinsImg, objectPosition: 'center 20%' },
         { name: 'Sripathy', role: 'Core Team', image: sripathyImg, objectPosition: 'center 25%' },
         { name: 'Abishek', role: 'Core Team', image: abishekImg, objectPosition: 'center 20%' },
         { name: 'Vedh', role: 'Core Team', image: vedhImg, objectPosition: 'center 20%' },
+        { name: 'Sukanya', role: 'HR', image: sukanyaImg, objectPosition: 'center 25%' },
         { name: 'Chetna', role: 'Content Head', image: chetnaImg, objectPosition: 'center 25%' },
     ];
 
@@ -35,7 +35,7 @@ const Team = () => {
                     {members.map((member, index) => (
                         <div
                             key={index}
-                            className={`team-card glass-effect${index === members.length - 1 ? ' team-card--solo' : ''}`}
+                            className="team-card glass-effect"
                         >
                             <div className="member-image-container">
                                 <img

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './Courses.css';
 
-import englishImg  from '../assets/course/English.jpeg';
-import btcImg      from '../assets/course/BTC.jpg';
-import bookImg     from '../assets/course/BOOK_Reading.jpeg';
-import d2dImg      from '../assets/course/D2D.jpg';
+import englishImg from '../assets/course/English.jpeg';
+import btcImg from '../assets/course/BTC.jpg';
+import bookImg from '../assets/course/BOOK_Reading.jpeg';
+import d2dImg from '../assets/course/D2D.jpg';
 
 const Courses = () => {
     const [expandedCard, setExpandedCard] = useState(null);
@@ -66,16 +66,16 @@ const Courses = () => {
                                 <h3>{course.title}</h3>
                                 <p className="course-summary">{course.summary}</p>
 
-                                <div className={`course-details ${expandedCard === course.id ? 'show' : ''}`}>
+                                {/* <div className={`course-details ${expandedCard === course.id ? 'show' : ''}`}>
                                     <p>{course.details}</p>
-                                </div>
+                                </div> */}
 
-                                <button
+                                {/* <button
                                     className="btn-text-link mt-sm"
                                     onClick={() => toggleExpand(course.id)}
                                 >
                                     {expandedCard === course.id ? 'Read Less ↑' : 'Read More ↓'}
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     ))}

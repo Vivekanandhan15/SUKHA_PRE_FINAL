@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import logo from '../assets/logo.png';
 
 const InstagramIcon = () => (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -18,7 +19,10 @@ const Footer = () => {
         <footer className="main-footer">
             <div className="container footer-content">
                 <div className="footer-brand">
-                    <h2 className="gradient-text">Sukha Education Foundation</h2>
+                    <div className="footer-brand-name">
+                        <img src={logo} alt="Sukha Logo" className="footer-logo" />
+                        <h2 className="gradient-text">Sukha Education Foundation</h2>
+                    </div>
                     <p>Empowering the next generation through quality education, innovation, and leadership.</p>
                 </div>
                 <div className="footer-links">
@@ -61,6 +65,15 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="container bottom-flex">
                     <p>&copy; {new Date().getFullYear()} Sukha Education Foundation. All rights reserved.</p>
+                    <button 
+                        className="footer-scroll-top"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        aria-label="Scroll to top"
+                    >
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="18 15 12 9 6 15" />
+                        </svg>
+                    </button>
                     <div className="social-links">
                         <a href="https://www.instagram.com/sukhaeducationfoundation?igsh=ZXh2MjdwZzY2MDg0" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
                             <InstagramIcon />

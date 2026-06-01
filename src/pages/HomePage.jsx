@@ -6,6 +6,7 @@ import Team from '../components/Team';
 import Courses from '../components/Courses';
 import Gallery from '../components/Gallery';
 import VolunteerGallery from '../components/VolunteerGallery';
+import Testimonials from '../components/Testimonials';
 import Reports from '../components/Reports';
 
 const HomePage = () => (
@@ -17,6 +18,7 @@ const HomePage = () => (
     <Courses />
     <Gallery />
     <VolunteerGallery />
+    <Testimonials />
     <Reports />
   </>
 );

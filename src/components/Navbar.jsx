@@ -3,12 +3,14 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 
-const Navbar = ({ onContactClick }) => {
+const Navbar = ({ onContactClick, contactOpen, onJoinUsClick, joinUsOpen }) => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
 
+    // Scroll shadow effect
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
@@ -16,6 +18,34 @@ const Navbar = ({ onContactClick }) => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Track which section is in view on the homepage
+    useEffect(() => {
+        if (location.pathname !== '/') {
+            setActiveSection('');
+            return;
+        }
+
+        const sectionIds = ['about', 'courses', 'gallery', 'testimonials', 'reports'];
+
+        const updateActive = () => {
+            const scrollPos = window.scrollY + 120;
+            let current = '';
+            let maxTop = -1;
+            for (const id of sectionIds) {
+                const el = document.getElementById(id);
+                if (el && el.offsetTop <= scrollPos && el.offsetTop > maxTop) {
+                    maxTop = el.offsetTop;
+                    current = id;
+                }
+            }
+            setActiveSection(current);
+        };
+
+        window.addEventListener('scroll', updateActive, { passive: true });
+        updateActive();
+        return () => window.removeEventListener('scroll', updateActive);
+    }, [location.pathname]);
 
     useEffect(() => {
         setMenuOpen(false);
@@ -60,11 +90,36 @@ const Navbar = ({ onContactClick }) => {
         { name: 'About', hash: '#about' },
         { name: 'Courses', hash: '#courses' },
         { name: 'Student blog', to: '/blog', route: true },
-        { name: 'Teachers Corner', to: '/teachers-corner', route: true },
+        { name: 'Teacher\'s Corner', to: '/teachers-corner', route: true },
         { name: 'Gallery', hash: '#gallery' },
+        { name: 'Testimonials', hash: '#testimonials' },
         { name: 'Reports', hash: '#reports' },
-        { name: 'Join us', hash: '#join' },
+        { name: 'Join us', popup: 'join' },
     ];
+
+    // Determine if a nav link should be highlighted
+    const isActive = (link) => {
+        if (link.popup === 'join') {
+            return joinUsOpen;
+        }
+        if (link.route) {
+            if (link.to === '/') {
+                // Home: active only when on homepage AND no section is scrolled into view
+                return location.pathname === '/' && !activeSection;
+            }
+            return location.pathname === link.to;
+        } else {
+            // Section buttons: active when on homepage and this section is in view
+            const id = link.hash.replace('#', '');
+            return location.pathname === '/' && activeSection === id;
+        }
+    };
+
+    const handleJoinUsClick = (e) => {
+        e.preventDefault();
+        closeMenu();
+        onJoinUsClick?.();
+    };
 
     const handleContactClick = (e) => {
         e.preventDefault();
@@ -114,15 +169,23 @@ const Navbar = ({ onContactClick }) => {
                             {link.route ? (
                                 <Link
                                     to={link.to}
-                                    className={`nav-link ${location.pathname === link.to ? 'active' : ''}`}
+                                    className={`nav-link ${isActive(link) ? 'active' : ''}`}
                                     onClick={closeMenu}
                                 >
                                     {link.name}
                                 </Link>
+                            ) : link.popup === 'join' ? (
+                                <button
+                                    type="button"
+                                    className={`nav-link nav-link-section ${isActive(link) ? 'active' : ''}`}
+                                    onClick={handleJoinUsClick}
+                                >
+                                    {link.name}
+                                </button>
                             ) : (
                                 <button
                                     type="button"
-                                    className="nav-link nav-link-section"
+                                    className={`nav-link nav-link-section ${isActive(link) ? 'active' : ''}`}
                                     onClick={() => scrollToSection(link.hash)}
                                 >
                                     {link.name}
@@ -133,7 +196,7 @@ const Navbar = ({ onContactClick }) => {
                     <li className="nav-item">
                         <button
                             type="button"
-                            className="nav-link nav-link-contact"
+                            className={`nav-link nav-link-contact ${contactOpen ? 'active' : ''}`}
                             onClick={handleContactClick}
                         >
                             Contact

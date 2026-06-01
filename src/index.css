@@ -138,9 +138,10 @@ img {
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  background: #4338CA;
+  background: #FFF;
+  color: var(--color-primary);
   /* Darker Indigo */
-  box-shadow: 0 15px 30px -5px rgba(79, 70, 229, 0.5);
+  box-shadow: 0 15px 30px -5px rgba(205, 203, 239, 0.5);
 }
 
 .btn-secondary {

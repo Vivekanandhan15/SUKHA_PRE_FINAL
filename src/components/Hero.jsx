@@ -26,7 +26,7 @@ const Hero = () => {
 
   useEffect(() => {
     if (videoOpen && videoRef.current) {
-      videoRef.current.play().catch(() => {});
+      videoRef.current.play().catch(() => { });
     }
     if (!videoOpen && videoRef.current) {
       videoRef.current.pause();
@@ -37,7 +37,7 @@ const Hero = () => {
   const closeVideo = () => setVideoOpen(false);
 
   return (
-    <section className="hero-section" id="join">
+    <section className="hero-section" id="hero">
       <div className="container hero-container">
         <div className="hero-grid">
           <div className="hero-content">
@@ -73,7 +73,7 @@ const Hero = () => {
               <div className="stat-divider"></div>
               <div className="stat-item">
                 <span className="stat-value">25+</span>
-                <span className="stat-label">Center</span>
+                <span className="stat-label">Centers</span>
               </div>
             </div>
           </div>
