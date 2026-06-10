@@ -6,6 +6,7 @@ import BlogListPage from './pages/BlogListPage';
 import BlogPostPage from './pages/BlogPostPage';
 import TeachersCornerPage from './pages/TeachersCornerPage';
 import TeacherArticlePostPage from './pages/TeacherArticlePostPage';
+import GalleryPage from './pages/GalleryPage';
 import './App.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/teachers-corner" element={<TeachersCornerPage />} />
           <Route path="/teachers-corner/:slug" element={<TeacherArticlePostPage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

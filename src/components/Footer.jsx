@@ -24,7 +24,7 @@ const Footer = ({ onJoinUsClick = () => {} }) => {
                         <img src={logo} alt="Sukha Logo" className="footer-logo" />
                         <h2 className="gradient-text">Sukha Education Foundation</h2>
                     </div>
-                    <p>Empowering the next generation through quality education, innovation, and leadership.</p>
+                    <p>At Sukha Education Foundation, we create safe, joyful learning spaces where learners discover their voice, build confidence and unlock opportunities that can shape their future.</p>
                 </div>
                 <div className="footer-links">
                     <div className="link-group">
@@ -39,7 +39,7 @@ const Footer = ({ onJoinUsClick = () => {} }) => {
                         <h4>Impact</h4>
                         <ul>
                             <li><Link to="/#courses">Programs</Link></li>
-                            <li><Link to="/#gallery">Gallery</Link></li>
+                            <li><Link to="/gallery">Gallery</Link></li>
                             <li>
                                 <button
                                     type="button"

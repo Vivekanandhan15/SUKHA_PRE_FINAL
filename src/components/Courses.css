@@ -50,8 +50,17 @@
     color: var(--color-text-dark);
 }
 
+.course-subtitle {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+}
+
 .course-summary {
     color: var(--color-text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .course-details {

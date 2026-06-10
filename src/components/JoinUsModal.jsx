@@ -33,7 +33,10 @@ const JoinUsModal = ({ onClose }) => {
 
                 <div className="join-modal-header">
                     <span className="join-modal-eyebrow">Join Our Mission</span>
-                    <h2 id="join-modal-title" className="join-modal-heading">How would you like to support us?</h2>
+                    <h2 id="join-modal-title" className="join-modal-heading">Be Part of a Learner's Journey</h2>
+                    <p className="join-modal-subtitle" style={{ fontSize: '0.95rem', color: 'var(--color-text-muted)', lineHeight: '1.6', marginTop: '0.5rem', marginBottom: '1rem' }}>
+                        Change begins with people who care. Whether you choose to volunteer, partner with us or support our initiatives, your contribution helps create opportunities to learn, grow and dream bigger. Together, we can build a future where every human feels seen, heard and empowered.
+                    </p>
                     <div className="join-modal-divider" />
                 </div>
 
@@ -48,9 +51,9 @@ const JoinUsModal = ({ onClose }) => {
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                             </svg>
                         </div>
-                        <h3 className="join-option-title">Become a Volunteer</h3>
+                        <h3 className="join-option-title">Volunteer With Us</h3>
                         <p className="join-option-desc">
-                            Lend your time, skills, and heart to teach, mentor, and build community with our students.
+                            Share your time, skills and compassion. Help mentor, teach, inspire and create meaningful learning experiences for learners who need them most.
                         </p>
                         <a
                             href="https://forms.gle/CrSMZfiaiCrzD7iH9"
@@ -68,9 +71,9 @@ const JoinUsModal = ({ onClose }) => {
                         <div className="join-option-icon partner-icon">
                                 <span className="handshake-emoji" role="img" aria-label="Handshake">🤝</span>
                             </div>
-                        <h3 className="join-option-title">Become a Partner</h3>
+                        <h3 className="join-option-title">Partner With Us</h3>
                         <p className="join-option-desc">
-                            Collaborate with us to expand educational centers, provide resources, and create sustainable impact.
+                            Join hands with us to expand our programs, strengthen communities and create lasting impact. Together, we can reach more people and open more doors to opportunity.
                         </p>
                         <a
                             href="https://forms.gle/fHPrE8BhrYr7EeFU9"

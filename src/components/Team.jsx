@@ -27,9 +27,12 @@ const Team = () => {
     return (
         <section className="team-section" id="team">
             <div className="container">
-                <div className="section-header text-center">
-                    <h2 className="section-title">Our Dedicated <span className="gradient-text">Team</span></h2>
-                    <p className="section-subtitle">Meet the passionate individuals driving our mission forward.</p>
+                <div className="section-header text-center" style={{ marginBottom: '3rem' }}>
+                    <h2 className="section-title">Our Dedicated Team</h2>
+                    <h3 className="section-subtitle-secondary" style={{ fontStyle: 'italic', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: '600', marginBottom: '0.5rem' }}>The People Behind the Purpose</h3>
+                    <p className="section-subtitle" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        From mentors and educators to volunteers and change-makers, our team brings passion, empathy and dedication into every classroom and every learner’s journey. Together, they make Sukha what it is.
+                    </p>
                 </div>
                 <div className="team-grid">
                     {members.map((member, index) => (

@@ -24,6 +24,14 @@ import img8f43        from '../assets/Voluntree/8f439cfc-ea0f-470e-abce-2447f4a5
 import imgD4df        from '../assets/Voluntree/d4dfc1cf-0449-498f-9615-f517c57cf4ac.jpg';
 import imgImage50     from '../assets/Voluntree/image_50364673.JPG';
 
+// ── New Untracked Volunteers ────────────────────────────────────
+import img4154        from '../assets/Voluntree/IMG_4154.JPG.jpeg';
+import imgWA1         from '../assets/Voluntree/WhatsApp Image 2026-06-09 at 4.35.59 PM (1).jpeg';
+import imgWA2         from '../assets/Voluntree/WhatsApp Image 2026-06-09 at 4.35.59 PM (2).jpeg';
+import imgWA3         from '../assets/Voluntree/WhatsApp Image 2026-06-09 at 4.35.59 PM.jpeg';
+import imgWA4         from '../assets/Voluntree/WhatsApp Image 2026-06-09 at 4.36.00 PM.jpeg';
+import imgWA5         from '../assets/Voluntree/WhatsApp Image 2026-06-09 at 5.38.29 PM.jpeg';
+
 const VolunteerGallery = () => {
     const volunteers = [
         { id: 1,  name: 'Meera Rajesh',       image: meeraImg,    pos: 'center 22%' },
@@ -47,14 +55,23 @@ const VolunteerGallery = () => {
         { id: 19, name: 'Volunteer',           image: img8f43,     pos: 'center 20%' },
         { id: 20, name: 'Volunteer',           image: imgD4df,     pos: 'center 25%' },
         { id: 21, name: 'Volunteer',           image: imgImage50,  pos: 'center 20%' },
+        { id: 22, name: 'Volunteer',           image: img4154,     pos: 'center 20%' },
+        { id: 23, name: 'Volunteer',           image: imgWA1,      pos: 'center 20%' },
+        { id: 24, name: 'Volunteer',           image: imgWA2,      pos: 'center 20%' },
+        { id: 25, name: 'Volunteer',           image: imgWA3,      pos: 'center 20%' },
+        { id: 26, name: 'Volunteer',           image: imgWA4,      pos: 'center 20%' },
+        { id: 27, name: 'Volunteer',           image: imgWA5,      pos: 'center 20%' },
     ];
 
     return (
         <section id="volunteer-gallery" className="volunteer-gallery-section section-padding">
             <div className="container">
-                <div className="section-header text-center volunteer-header">
-                    <h2 className="section-title">Our Proud <span className="gradient-text">Volunteers</span></h2>
-                    <p className="section-subtitle">The hearts behind Sukha — making a difference every day.</p>
+                <div className="section-header text-center volunteer-header" style={{ marginBottom: '3rem' }}>
+                    <h2 className="section-title">Our Volunteers</h2>
+                    <h3 className="section-subtitle-secondary" style={{ fontStyle: 'italic', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: '600', marginBottom: '0.5rem' }}>The Heart of Sukha</h3>
+                    <p className="section-subtitle" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        Every smile, every conversation, every moment of encouragement matters. Our volunteers bring time, talent, patience and kindness into the lives of our students, creating meaningful relationships that often leave a lasting impact on both sides. They are not just volunteers. They are mentors, role models, cheerleaders and friends.
+                    </p>
                 </div>
 
                 <div className="collage-wrapper">

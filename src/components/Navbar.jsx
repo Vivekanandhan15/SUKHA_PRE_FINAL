@@ -91,7 +91,7 @@ const Navbar = ({ onContactClick, contactOpen, onJoinUsClick, joinUsOpen }) => {
         { name: 'Courses', hash: '#courses' },
         { name: 'Student blog', to: '/blog', route: true },
         { name: 'Teacher\'s Corner', to: '/teachers-corner', route: true },
-        { name: 'Gallery', hash: '#gallery' },
+        { name: 'Gallery', to: '/gallery', route: true },
         { name: 'Testimonials', hash: '#testimonials' },
         { name: 'Reports', hash: '#reports' },
         { name: 'Join us', popup: 'join' },
