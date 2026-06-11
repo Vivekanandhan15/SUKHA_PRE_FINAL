@@ -26,7 +26,7 @@ const FAQPage = () => {
       a: "We provide an official program completion letter that outlines the details of your volunteer experience. This letter can be used for certification or documentation purposes. Volunteers are eligible to receive this letter provided they adhere to the program's non-negotiable requirements, which will be explained during the orientation."
     },
     {
-      q: 'Do you provide reimbursements for transport?',
+      q: 'Do you provide reimbursements?',
       a: 'We offer reimbursements only for printing expenses incurred during the program. The process will be explained during the orientation session.'
     },
   ];
