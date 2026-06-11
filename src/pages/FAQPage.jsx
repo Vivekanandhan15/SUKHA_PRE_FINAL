@@ -27,7 +27,7 @@ const FAQPage = () => {
     },
     {
       q: 'Do you provide reimbursements for transport?',
-      a: 'Yes, we offer some reimbursement for transportation and printing expenses incurred during the program. Details regarding eligibility, reimbursement limits, and the process will be shared during the orientation session.'
+      a: 'We offer reimbursements only for printing expenses incurred during the program. The process will be explained during the orientation session.'
     },
   ];
 
