@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
+import logo from '../assets/logo.png';
 
 const InstagramIcon = () => (
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -13,30 +15,42 @@ const LinkedInIcon = () => (
     </svg>
 );
 
-const Footer = () => {
+const Footer = ({ onJoinUsClick = () => { } }) => {
     return (
         <footer className="main-footer">
             <div className="container footer-content">
                 <div className="footer-brand">
-                    <h2 className="gradient-text">Sukha Education</h2>
-                    <p>Empowering the next generation through quality education, innovation, and leadership.</p>
+                    <div className="footer-brand-name">
+                        <img src={logo} alt="Sukha Logo" className="footer-logo" />
+                        <h2 className="gradient-text">Sukha Education Foundation</h2>
+                    </div>
+                    <p>At Sukha Education Foundation, we create safe, joyful learning spaces where learners discover their voice, build confidence and unlock opportunities that can shape their future.</p>
                 </div>
                 <div className="footer-links">
                     <div className="link-group">
                         <h4>Organization</h4>
                         <ul>
-                            <li><a href="#about">Our Story</a></li>
-                            <li><a href="#board">Board of Directors</a></li>
-                            <li><a href="#team">The Team</a></li>
+                            <li><a href="/#about">Our Story</a></li>
+                            <li><a href="/#board">Board of Directors</a></li>
+                            <li><a href="/#team">The Team</a></li>
                         </ul>
                     </div>
                     <div className="link-group">
                         <h4>Impact</h4>
                         <ul>
-                            <li><a href="#courses">Programs</a></li>
-                            <li><a href="#gallery">Gallery</a></li>
-                            <li><a href="/teachers-corner">Teachers Corner</a></li>
-                            <li><a href="/blog">Student Blog</a></li>
+                            <li><Link to="/#courses">Programs</Link></li>
+                            <li><Link to="/gallery">Gallery</Link></li>
+                            <li>
+                                <button
+                                    type="button"
+                                    className="footer-button-link"
+                                    onClick={onJoinUsClick}
+                                >
+                                    Join Us
+                                </button>
+                            </li>
+                            <li><Link to="/teachers-corner">Mentor's Hub</Link></li>
+                            <li><Link to="/blog">Student Blog</Link></li>
                         </ul>
                     </div>
                     <div className="link-group">
@@ -44,9 +58,9 @@ const Footer = () => {
                         <ul>
                             <li><a href="mailto:educationsukha@gmail.com">educationsukha@gmail.com</a></li>
                             <li>
-                                <a 
-                                    href="https://maps.app.goo.gl/m15tb6gAjZ8MbXsC8" 
-                                    target="_blank" 
+                                <a
+                                    href="https://maps.app.goo.gl/m15tb6gAjZ8MbXsC8"
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="address-link"
                                 >
@@ -60,6 +74,15 @@ const Footer = () => {
             <div className="footer-bottom">
                 <div className="container bottom-flex">
                     <p>&copy; {new Date().getFullYear()} Sukha Education Foundation. All rights reserved.</p>
+                    <button
+                        className="footer-scroll-top"
+                        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                        aria-label="Scroll to top"
+                    >
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                            <polyline points="18 15 12 9 6 15" />
+                        </svg>
+                    </button>
                     <div className="social-links">
                         <a href="https://www.instagram.com/sukhaeducationfoundation?igsh=ZXh2MjdwZzY2MDg0" target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Instagram">
                             <InstagramIcon />

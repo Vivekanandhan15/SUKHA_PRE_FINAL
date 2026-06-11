@@ -4,8 +4,8 @@
  * 2. Copy a block below: id, slug, author, title, excerpt, coverImage, paragraphs
  */
 
-import bookClubCover from '../assets/Gallery/BookCLub1.jpeg';
-import englishProgramCover from '../assets/Gallery/English_Program.jpeg';
+import bookClubCover from '../assets/Voluntree/Shirley.jpg';
+import englishProgramCover from "../assets/Voluntree/Sivapriya Krishnan IMG_1821.jpg";
 
 export const teacherArticles = [
   {

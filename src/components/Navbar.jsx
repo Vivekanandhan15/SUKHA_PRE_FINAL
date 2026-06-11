@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../assets/logo.png';
 
-const Navbar = ({ onContactClick }) => {
+const Navbar = ({ onContactClick, contactOpen, onJoinUsClick, joinUsOpen }) => {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState('');
     const location = useLocation();
-    const isHome = location.pathname === '/';
+    const navigate = useNavigate();
 
+    // Scroll shadow effect
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 50);
@@ -17,9 +19,37 @@ const Navbar = ({ onContactClick }) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Track which section is in view on the homepage
+    useEffect(() => {
+        if (location.pathname !== '/') {
+            setActiveSection('');
+            return;
+        }
+
+        const sectionIds = ['about', 'courses', 'gallery', 'testimonials', 'reports'];
+
+        const updateActive = () => {
+            const scrollPos = window.scrollY + 120;
+            let current = '';
+            let maxTop = -1;
+            for (const id of sectionIds) {
+                const el = document.getElementById(id);
+                if (el && el.offsetTop <= scrollPos && el.offsetTop > maxTop) {
+                    maxTop = el.offsetTop;
+                    current = id;
+                }
+            }
+            setActiveSection(current);
+        };
+
+        window.addEventListener('scroll', updateActive, { passive: true });
+        updateActive();
+        return () => window.removeEventListener('scroll', updateActive);
+    }, [location.pathname]);
+
     useEffect(() => {
         setMenuOpen(false);
-    }, [location.pathname]);
+    }, [location.pathname, location.hash]);
 
     useEffect(() => {
         document.body.style.overflow = menuOpen ? 'hidden' : '';
@@ -40,18 +70,57 @@ const Navbar = ({ onContactClick }) => {
 
     const closeMenu = () => setMenuOpen(false);
 
-    const sectionHref = (hash) => (isHome ? hash : `/${hash}`);
+    const scrollToSection = (hash) => {
+        const id = hash.replace('#', '');
+        closeMenu();
+
+        if (location.pathname === '/') {
+            const el = document.getElementById(id);
+            if (el) {
+                el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            window.history.replaceState(null, '', `/#${id}`);
+        } else {
+            navigate({ pathname: '/', hash: `#${id}` });
+        }
+    };
 
     const navLinks = [
-        { name: 'Home', to: '/' },
-        { name: 'About', to: sectionHref('#about') },
-        { name: 'Courses', to: sectionHref('#courses') },
+        { name: 'Home', to: '/', route: true },
+        { name: 'About', hash: '#about' },
+        { name: 'Courses', hash: '#courses' },
         { name: 'Student blog', to: '/blog', route: true },
-        { name: 'Teachers Corner', to: '/teachers-corner', route: true },
-        { name: 'Gallery', to: sectionHref('#gallery') },
-        { name: 'Reports', to: sectionHref('#reports') },
-        { name: 'Join us', to: sectionHref('#join') },
+        { name: 'Mentor\'s Hub', to: '/teachers-corner', route: true },
+        { name: 'Gallery', to: '/gallery', route: true },
+        { name: 'Success Stories', hash: '#testimonials' },
+        { name: 'Reports', hash: '#reports' },
+        { name: 'FAQ', to: '/faq', route: true },
+        { name: 'Join us', popup: 'join' },
     ];
+
+    // Determine if a nav link should be highlighted
+    const isActive = (link) => {
+        if (link.popup === 'join') {
+            return joinUsOpen;
+        }
+        if (link.route) {
+            if (link.to === '/') {
+                // Home: active only when on homepage AND no section is scrolled into view
+                return location.pathname === '/' && !activeSection;
+            }
+            return location.pathname === link.to;
+        } else {
+            // Section buttons: active when on homepage and this section is in view
+            const id = link.hash.replace('#', '');
+            return location.pathname === '/' && activeSection === id;
+        }
+    };
+
+    const handleJoinUsClick = (e) => {
+        e.preventDefault();
+        closeMenu();
+        onJoinUsClick?.();
+    };
 
     const handleContactClick = (e) => {
         e.preventDefault();
@@ -59,10 +128,19 @@ const Navbar = ({ onContactClick }) => {
         onContactClick?.();
     };
 
+    const handleHomeClick = (e) => {
+        closeMenu();
+        if (location.pathname === '/') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.history.replaceState(null, '', '/');
+        }
+    };
+
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${menuOpen ? 'menu-open' : ''}`}>
             <div className="container navbar-content">
-                <Link to="/" className="brand" onClick={closeMenu}>
+                <Link to="/" className="brand" onClick={handleHomeClick}>
                     <img src={logo} alt="Sukha Education Logo" className="navbar-logo" />
                     <span className="logo-text">Sukha Education <br /> Foundation</span>
                 </Link>
@@ -92,22 +170,34 @@ const Navbar = ({ onContactClick }) => {
                             {link.route ? (
                                 <Link
                                     to={link.to}
-                                    className={`nav-link ${location.pathname === link.to ? 'active' : ''}`}
-                                    onClick={closeMenu}
+                                    className={`nav-link ${isActive(link) ? 'active' : ''}`}
+                                    onClick={link.to === '/' ? handleHomeClick : closeMenu}
                                 >
                                     {link.name}
                                 </Link>
-                            ) : (
-                                <a href={link.to} className="nav-link" onClick={closeMenu}>
+                            ) : link.popup === 'join' ? (
+                                <button
+                                    type="button"
+                                    className={`nav-link nav-link-section ${isActive(link) ? 'active' : ''}`}
+                                    onClick={handleJoinUsClick}
+                                >
                                     {link.name}
-                                </a>
+                                </button>
+                            ) : (
+                                <button
+                                    type="button"
+                                    className={`nav-link nav-link-section ${isActive(link) ? 'active' : ''}`}
+                                    onClick={() => scrollToSection(link.hash)}
+                                >
+                                    {link.name}
+                                </button>
                             )}
                         </li>
                     ))}
                     <li className="nav-item">
                         <button
                             type="button"
-                            className="nav-link nav-link-contact"
+                            className={`nav-link nav-link-contact ${contactOpen ? 'active' : ''}`}
                             onClick={handleContactClick}
                         >
                             Contact

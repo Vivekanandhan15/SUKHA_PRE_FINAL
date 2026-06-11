@@ -16,24 +16,30 @@ const Team = () => {
         { name: 'Nikitha', role: 'Co-COO', image: nikitaImg, objectPosition: 'center 15%' },
         { name: 'Shiva Chandrika', role: 'Co-COO', image: shivaImg, objectPosition: 'center 20%' },
         { name: 'Ayush', role: 'CFO', image: ayushImg, objectPosition: 'center 20%' },
-        { name: 'Sukanya', role: 'HR', image: sukanyaImg, objectPosition: 'center 25%' },
         { name: 'Vinnarasi', role: 'Core Team', image: vinsImg, objectPosition: 'center 20%' },
         { name: 'Sripathy', role: 'Core Team', image: sripathyImg, objectPosition: 'center 25%' },
         { name: 'Abishek', role: 'Core Team', image: abishekImg, objectPosition: 'center 20%' },
         { name: 'Vedh', role: 'Core Team', image: vedhImg, objectPosition: 'center 20%' },
+        { name: 'Sukanya', role: 'HR', image: sukanyaImg, objectPosition: 'center 25%' },
         { name: 'Chetna', role: 'Content Head', image: chetnaImg, objectPosition: 'center 25%' },
     ];
 
     return (
         <section className="team-section" id="team">
             <div className="container">
-                <div className="section-header text-center">
-                    <h2 className="section-title">Our Dedicated <span className="gradient-text">Team</span></h2>
-                    <p className="section-subtitle">Meet the passionate individuals driving our mission forward.</p>
+                <div className="section-header text-center" style={{ marginBottom: '3rem' }}>
+                    <h2 className="section-title">Our Dedicated Team</h2>
+                    <h3 className="section-subtitle-secondary" style={{ fontStyle: 'italic', fontSize: '1.25rem', color: 'var(--color-primary)', fontWeight: '600', marginBottom: '0.5rem' }}>The People Behind the Purpose</h3>
+                    <p className="section-subtitle" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                        From mentors and educators to volunteers and change-makers, our team brings passion, empathy and dedication into every classroom and every learner’s journey. Together, they make Sukha what it is.
+                    </p>
                 </div>
                 <div className="team-grid">
                     {members.map((member, index) => (
-                        <div key={index} className="team-card glass-effect">
+                        <div
+                            key={index}
+                            className="team-card glass-effect"
+                        >
                             <div className="member-image-container">
                                 <img
                                     src={member.image}

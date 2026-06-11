@@ -5,7 +5,7 @@
 
 .blog-list-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
 }
 
@@ -38,7 +38,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  /* shift image down slightly so faces near the top are visible */
+  object-position: center 35%;
 }
 
 .blog-list-cover-placeholder {
@@ -129,7 +130,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  /* shift image down slightly so faces near the top are visible */
+  object-position: center 35%;
 }
 
 .blog-post-cover-placeholder {
@@ -213,7 +215,13 @@
   text-decoration: underline;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
+  .blog-list-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
   .blog-list-grid {
     grid-template-columns: 1fr;
   }

@@ -47,9 +47,13 @@ const ContactSidebar = ({ isOpen, onClose }) => {
                 <button type="button" className="contact-close" onClick={onClose} aria-label="Close contact panel">
                     &times;
                 </button>
-                <h2 className="contact-sidebar-title">Get in <span className="gradient-text">Touch</span></h2>
-                <p className="contact-sidebar-intro">
-                    Reach out to Sukha Education Foundation for partnerships, volunteering, or general inquiries.
+                <h2 className="contact-sidebar-title">Get in Touch</h2>
+                <h3 className="contact-sidebar-subtitle-secondary" style={{ fontStyle: 'italic', fontSize: '1.15rem', color: 'var(--color-primary)', fontWeight: '600', marginBottom: '0.5rem' }}>We'd Love to Hear From You</h3>
+                <p className="contact-sidebar-intro" style={{ marginBottom: '1.25rem' }}>
+                    Whether you're looking to volunteer, partner with us, support our work or simply learn more about what we do, we'd be happy to connect.
+                </p>
+                <p className="contact-sidebar-tagline" style={{ fontWeight: '700', fontSize: '0.95rem', color: 'var(--color-text-dark)', marginBottom: '2rem', lineHeight: '1.5' }}>
+                    Every conversation has the potential to create change. Let's start one.
                 </p>
 
                 <div className="contact-detail-list">
