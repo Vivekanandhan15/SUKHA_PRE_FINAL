@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import HomePage from './pages/HomePage';
+import FAQPage from './pages/FAQPage';
 import BlogListPage from './pages/BlogListPage';
 import BlogPostPage from './pages/BlogPostPage';
 import TeachersCornerPage from './pages/TeachersCornerPage';
@@ -19,7 +20,8 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/teachers-corner" element={<TeachersCornerPage />} />
           <Route path="/teachers-corner/:slug" element={<TeacherArticlePostPage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/gallery" element={<GalleryPage />} />
+            <Route path="/faq" element={<FAQPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

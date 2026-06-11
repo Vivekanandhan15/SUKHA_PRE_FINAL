@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './VolunteerGallery.css';
 
 // ── Named volunteers ──────────────────────────────────────────
@@ -26,11 +26,89 @@ import imgImage50     from '../assets/Voluntree/image_50364673.JPG';
 
 // ── New Untracked Volunteers ────────────────────────────────────
 import img4154        from '../assets/Voluntree/IMG_4154.JPG.jpeg';
+import img4162        from '../assets/Voluntree/IMG_4162.JPG.jpeg';
+import img4164        from '../assets/Voluntree/IMG_4164.JPG.jpeg';
 import imgWA1         from '../assets/Voluntree/WhatsApp Image 2026-06-09 at 4.35.59 PM (1).jpeg';
 import imgWA2         from '../assets/Voluntree/WhatsApp Image 2026-06-09 at 4.35.59 PM (2).jpeg';
 import imgWA3         from '../assets/Voluntree/WhatsApp Image 2026-06-09 at 4.35.59 PM.jpeg';
 import imgWA4         from '../assets/Voluntree/WhatsApp Image 2026-06-09 at 4.36.00 PM.jpeg';
 import imgWA5         from '../assets/Voluntree/WhatsApp Image 2026-06-09 at 5.38.29 PM.jpeg';
+
+// Helper to calculate grid spans and aspect ratios for the last row to prevent awkward empty spaces
+const getGridStyle = (index, total, cols) => {
+    const remainder = total % cols;
+    if (remainder === 0) return {};
+
+    const lastRowStartIndex = total - remainder;
+    if (index < lastRowStartIndex) return {};
+
+    const itemPositionInLastRow = index - lastRowStartIndex;
+
+    if (remainder === 1) {
+        return {
+            gridColumn: `span ${cols}`,
+            aspectRatio: `${cols} / 1`
+        };
+    }
+
+    if (remainder === 2) {
+        if (cols === 6) {
+            return { gridColumn: 'span 3', aspectRatio: '3 / 1' };
+        }
+        if (cols === 4) {
+            return { gridColumn: 'span 2', aspectRatio: '2 / 1' };
+        }
+        if (cols === 5) {
+            return itemPositionInLastRow === 0 
+                ? { gridColumn: 'span 2', aspectRatio: '2 / 1' } 
+                : { gridColumn: 'span 3', aspectRatio: '3 / 1' };
+        }
+        if (cols === 3) {
+            return itemPositionInLastRow === 0
+                ? {} 
+                : { gridColumn: 'span 2', aspectRatio: '2 / 1' };
+        }
+    }
+
+    if (remainder === 3) {
+        if (cols === 6) {
+            return { gridColumn: 'span 2', aspectRatio: '2 / 1' };
+        }
+        if (cols === 5) {
+            return itemPositionInLastRow < 2
+                ? { gridColumn: 'span 2', aspectRatio: '2 / 1' }
+                : {};
+        }
+        if (cols === 4) {
+            return itemPositionInLastRow === 2
+                ? { gridColumn: 'span 2', aspectRatio: '2 / 1' }
+                : {};
+        }
+    }
+
+    if (remainder === 4) {
+        if (cols === 6) {
+            return itemPositionInLastRow >= 2
+                ? { gridColumn: 'span 2', aspectRatio: '2 / 1' }
+                : {};
+        }
+        if (cols === 5) {
+            return itemPositionInLastRow === 3
+                ? { gridColumn: 'span 2', aspectRatio: '2 / 1' }
+                : {};
+        }
+    }
+
+    if (remainder === 5) {
+        if (cols === 6) {
+            return itemPositionInLastRow === 4
+                ? { gridColumn: 'span 2', aspectRatio: '2 / 1' }
+                : {};
+        }
+    }
+
+    return {};
+};
 
 const VolunteerGallery = () => {
     const volunteers = [
@@ -56,12 +134,36 @@ const VolunteerGallery = () => {
         { id: 20, name: 'Volunteer',           image: imgD4df,     pos: 'center 25%' },
         { id: 21, name: 'Volunteer',           image: imgImage50,  pos: 'center 20%' },
         { id: 22, name: 'Volunteer',           image: img4154,     pos: 'center 20%' },
-        { id: 23, name: 'Volunteer',           image: imgWA1,      pos: 'center 20%' },
-        { id: 24, name: 'Volunteer',           image: imgWA2,      pos: 'center 20%' },
-        { id: 25, name: 'Volunteer',           image: imgWA3,      pos: 'center 20%' },
-        { id: 26, name: 'Volunteer',           image: imgWA4,      pos: 'center 20%' },
-        { id: 27, name: 'Volunteer',           image: imgWA5,      pos: 'center 20%' },
+        { id: 23, name: 'Volunteer',           image: img4162,     pos: 'center 20%' },
+        { id: 24, name: 'Volunteer',           image: img4164,     pos: 'center 20%' },
+        { id: 25, name: 'Volunteer',           image: imgWA1,      pos: 'center 20%' },
+        { id: 26, name: 'Volunteer',           image: imgWA2,      pos: 'center 20%', scale: 1.55 }, // Zoomed to crop out top/bottom white bars
+        { id: 27, name: 'Volunteer',           image: imgWA3,      pos: 'center 20%' },
+        { id: 28, name: 'Volunteer',           image: imgWA4,      pos: 'center 20%' },
+        { id: 29, name: 'Volunteer',           image: imgWA5,      pos: 'center 75%' },
     ];
+
+    // Responsive grid column detection
+    const [cols, setCols] = useState(6);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width <= 400) {
+                setCols(3);
+            } else if (width <= 640) {
+                setCols(4);
+            } else if (width <= 1024) {
+                setCols(5);
+            } else {
+                setCols(6);
+            }
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     return (
         <section id="volunteer-gallery" className="volunteer-gallery-section section-padding">
@@ -76,16 +178,22 @@ const VolunteerGallery = () => {
 
                 <div className="collage-wrapper">
                     <div className="collage-grid">
-                        {volunteers.map((v) => (
-                            <div key={v.id} className="collage-cell">
-                                <img
-                                    src={v.image}
-                                    alt={v.name}
-                                    className="collage-img"
-                                    style={{ objectPosition: v.pos }}
-                                />
-                            </div>
-                        ))}
+                        {volunteers.map((v, index) => {
+                            const gridStyle = getGridStyle(index, volunteers.length, cols);
+                            return (
+                                <div key={v.id} className="collage-cell" style={gridStyle}>
+                                    <img
+                                        src={v.image}
+                                        alt={v.name}
+                                        className="collage-img"
+                                        style={{ 
+                                            objectPosition: v.pos,
+                                            '--base-scale': String(v.scale || 1)
+                                        }}
+                                    />
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

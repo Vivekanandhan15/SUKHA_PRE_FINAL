@@ -29,7 +29,7 @@ const BlogListPage = () => (
                 )}
               </div>
               <div className="blog-list-body">
-                <span className="blog-list-id">{post.id}</span>
+                {/* <span className="blog-list-id">{post.id}</span> */}
                 <h2>{post.title}</h2>
                 <p className="blog-list-author">By {post.author}</p>
                 <p className="blog-list-excerpt">{post.excerpt}</p>

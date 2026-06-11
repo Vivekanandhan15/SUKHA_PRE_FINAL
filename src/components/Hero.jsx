@@ -54,16 +54,18 @@ const AnimatedCounter = ({ target, duration = 1800, suffix = '' }) => {
 // ── Hero ─────────────────────────────────────────────────────────
 const Hero = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [slideshowRunning, setSlideshowRunning] = useState(true);
   const [videoOpen, setVideoOpen] = useState(false);
   const videoRef = useRef(null);
 
-  // Auto-advance slides every 4 s
+  // Auto-advance slides every 4 s (only when running)
   useEffect(() => {
+    if (!slideshowRunning) return;
     const id = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % banners.length);
     }, 4000);
     return () => clearInterval(id);
-  }, []);
+  }, [slideshowRunning]);
 
   // Lock scroll when video is open
   useEffect(() => {
@@ -78,10 +80,10 @@ const Hero = () => {
     return () => window.removeEventListener('keydown', onKey);
   }, [videoOpen]);
 
-  // Play / pause video
+  // Play / pause video element
   useEffect(() => {
     if (!videoRef.current) return;
-    if (videoOpen) videoRef.current.play().catch(() => {});
+    if (videoOpen) videoRef.current.play().catch(() => { });
     else { videoRef.current.pause(); videoRef.current.currentTime = 0; }
   }, [videoOpen]);
 
@@ -99,11 +101,10 @@ const Hero = () => {
             style={{ backgroundImage: `url(${src})` }}
           />
         ))}
-        {/* Dark overlay so text is always readable */}
         <div className="hero-bg-overlay" />
       </div>
 
-      {/* ── Slide indicators ──────────────────────────────────── */}
+      {/* ── Slide dots ──────────────────────────────────────────── */}
       <div className="hero-slide-dots" aria-label="Slideshow navigation">
         {banners.map((_, i) => (
           <button
@@ -115,70 +116,68 @@ const Hero = () => {
         ))}
       </div>
 
-      {/* ── Content ───────────────────────────────────────────── */}
+      {/* ── Content ────────────────────────────────────────────── */}
       <div className="container hero-container">
-        <div className="hero-content animate-fade-in-up">
-          <h1 className="hero-title">
-            Educurating a Better Tomorrow
-          </h1>
-          <p className="hero-subtitle delay-100">
-            Every human deserves the confidence to be heard, the courage to dream and the opportunity to thrive.
-          </p>
-          <p className="hero-description delay-200">
-            At Sukha Education Foundation, we create safe, joyful learning spaces where learners discover their voice, build confidence and unlock opportunities that can shape their future.
-          </p>
-          <p className="hero-tagline delay-300">
-            Join us in nurturing a generation that believes in itself.
-          </p>
+          <div className="hero-content animate-fade-in-up">
+            <h1 className="hero-title">
+              Educurating a Better Tomorrow
+            </h1>
+            <p className="hero-subtitle delay-100">
+              Every human deserves the confidence to be heard, the courage to dream and the opportunity to thrive.
+            </p>
+            <p className="hero-description delay-200">
+              At Sukha Education Foundation, we create safe, joyful learning spaces where learners discover their voice, build confidence and unlock opportunities that can shape their future.
+            </p>
+            <p className="hero-tagline delay-300">
+              Join us in nurturing a generation that believes in itself.
+            </p>
 
-          <div className="hero-cta delay-400">
-            <a
-              href="https://forms.gle/CrSMZfiaiCrzD7iH9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary"
-            >
-              Join as Volunteer
-            </a>
-            <a
-              href="https://forms.gle/fHPrE8BhrYr7EeFU9"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary-light"
-            >
-              Join as Partner
-            </a>
+            <div className="hero-cta delay-400">
+              <a
+                href="https://forms.gle/CrSMZfiaiCrzD7iH9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                Volunteer With Us
+              </a>
+              <a
+                href="https://forms.gle/fHPrE8BhrYr7EeFU9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary-light"
+              >
+                Partner With Us
+              </a>
+              <button
+                type="button"
+                className="hero-video-btn delay-400"
+                onClick={() => setVideoOpen(true)}
+                aria-label="Watch success story video"
+              >
+                <div className="play-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                </div>
+                <span>Watch Success Story</span>
+              </button>
+            </div>
 
-            {/* Watch video button */}
-            <button
-              type="button"
-              className="hero-video-btn delay-400"
-              onClick={() => setVideoOpen(true)}
-              aria-label="Watch success story video"
-            >
-              <div className="play-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+            <div className="hero-stats glass-effect-dark delay-500">
+              <div className="stat-item">
+                <span className="stat-value">
+                  <AnimatedCounter target="2000" suffix="+" />
+                </span>
+                <span className="stat-label">Students Reached</span>
               </div>
-              <span>Watch Success Story</span>
-            </button>
-          </div>
-
-          <div className="hero-stats glass-effect-dark delay-500">
-            <div className="stat-item">
-              <span className="stat-value">
-                <AnimatedCounter target="2000" suffix="+" />
-              </span>
-              <span className="stat-label">Students Reached</span>
-            </div>
-            <div className="stat-divider-dark" />
-            <div className="stat-item">
-              <span className="stat-value">
-                <AnimatedCounter target="25" suffix="+" />
-              </span>
-              <span className="stat-label">Centers</span>
+              <div className="stat-divider-dark" />
+              <div className="stat-item">
+                <span className="stat-value">
+                  <AnimatedCounter target="25" suffix="+" />
+                </span>
+                <span className="stat-label">Centers</span>
+              </div>
             </div>
           </div>
-        </div>
       </div>
 
       {/* ── Video modal ───────────────────────────────────────── */}

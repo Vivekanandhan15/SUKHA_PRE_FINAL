@@ -3,7 +3,7 @@
    ============================================= */
 
 .volunteer-gallery-section {
-    background: var(--color-bg-light);
+    background: #fff;
     padding: var(--spacing-xl) 0;
 }
 
@@ -17,7 +17,7 @@
     font-size: 1.05rem;
 }
 
-/* ── Collage wrapper: max-width to keep it proportional ── */
+/* ── Collage wrapper ── */
 .collage-wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -26,12 +26,12 @@
     box-shadow: 0 16px 60px rgba(91, 85, 84, 0.15);
 }
 
-/* ── Dense grid — 7 columns, auto-fill rows, zero gap ── */
+/* ── 6-column grid: 29 photos → 4 full rows + last row of 5 ── */
 .collage-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 4px;
-    background: var(--color-primary);   /* gap colour = brand mauve */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3px;
+    background: rgba(0, 0, 0, 0.12);
 }
 
 /* ── Each cell is a square ── */
@@ -40,6 +40,7 @@
     aspect-ratio: 1 / 1;
     overflow: hidden;
     cursor: pointer;
+    background: rgba(0, 0, 0, 0.12); /* same as gap — no white flash */
 }
 
 .collage-img {
@@ -47,18 +48,23 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transform: scale(var(--base-scale, 1));
     transition: transform 0.4s ease;
 }
 
-/* ── Hover: name overlay slides up ── */
+/* ── Hover: subtle zoom ── */
+.collage-cell:hover .collage-img {
+    transform: scale(calc(var(--base-scale, 1) * 1.08));
+}
+
+/* ── Hover overlay ── */
 .collage-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(194, 142, 178, 0.88) 0%,
-        rgba(194, 142, 178, 0.2) 55%,
-        transparent 100%
+        rgba(91, 85, 84, 0.7) 0%,
+        transparent 60%
     );
     display: flex;
     align-items: flex-end;
@@ -80,10 +86,6 @@
     text-shadow: 0 1px 4px rgba(0,0,0,0.4);
 }
 
-.collage-cell:hover .collage-img {
-    transform: scale(1.08);
-}
-
 .collage-cell:hover .collage-overlay {
     opacity: 1;
 }
@@ -98,9 +100,8 @@
 @media (max-width: 640px) {
     .collage-grid {
         grid-template-columns: repeat(4, 1fr);
-        gap: 3px;
+        gap: 2px;
     }
-
     .collage-name {
         font-size: 0.6rem;
     }
@@ -109,6 +110,5 @@
 @media (max-width: 400px) {
     .collage-grid {
         grid-template-columns: repeat(3, 1fr);
-        gap: 2px;
     }
 }

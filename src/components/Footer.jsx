@@ -15,7 +15,7 @@ const LinkedInIcon = () => (
     </svg>
 );
 
-const Footer = ({ onJoinUsClick = () => {} }) => {
+const Footer = ({ onJoinUsClick = () => { } }) => {
     return (
         <footer className="main-footer">
             <div className="container footer-content">
@@ -49,7 +49,7 @@ const Footer = ({ onJoinUsClick = () => {} }) => {
                                     Join Us
                                 </button>
                             </li>
-                            <li><Link to="/teachers-corner">Teachers Corner</Link></li>
+                            <li><Link to="/teachers-corner">Mentor's Hub</Link></li>
                             <li><Link to="/blog">Student Blog</Link></li>
                         </ul>
                     </div>
@@ -58,9 +58,9 @@ const Footer = ({ onJoinUsClick = () => {} }) => {
                         <ul>
                             <li><a href="mailto:educationsukha@gmail.com">educationsukha@gmail.com</a></li>
                             <li>
-                                <a 
-                                    href="https://maps.app.goo.gl/m15tb6gAjZ8MbXsC8" 
-                                    target="_blank" 
+                                <a
+                                    href="https://maps.app.goo.gl/m15tb6gAjZ8MbXsC8"
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="address-link"
                                 >
@@ -74,7 +74,7 @@ const Footer = ({ onJoinUsClick = () => {} }) => {
             <div className="footer-bottom">
                 <div className="container bottom-flex">
                     <p>&copy; {new Date().getFullYear()} Sukha Education Foundation. All rights reserved.</p>
-                    <button 
+                    <button
                         className="footer-scroll-top"
                         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                         aria-label="Scroll to top"

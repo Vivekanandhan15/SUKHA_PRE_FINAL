@@ -1,6 +1,6 @@
 import React from 'react';
 import './Board.css';
-import kavyaImg from '../assets/Team/Kavya Co-Founder.png';
+import kavyaImg from '../assets/Team/kavya.jpeg';
 import sanjanaImg from '../assets/Team/Sanjana (Co-Founder).png';
 
 const Board = () => {

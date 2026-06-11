@@ -90,10 +90,11 @@ const Navbar = ({ onContactClick, contactOpen, onJoinUsClick, joinUsOpen }) => {
         { name: 'About', hash: '#about' },
         { name: 'Courses', hash: '#courses' },
         { name: 'Student blog', to: '/blog', route: true },
-        { name: 'Teacher\'s Corner', to: '/teachers-corner', route: true },
+        { name: 'Mentor\'s Hub', to: '/teachers-corner', route: true },
         { name: 'Gallery', to: '/gallery', route: true },
-        { name: 'Testimonials', hash: '#testimonials' },
+        { name: 'Success Stories', hash: '#testimonials' },
         { name: 'Reports', hash: '#reports' },
+        { name: 'FAQ', to: '/faq', route: true },
         { name: 'Join us', popup: 'join' },
     ];
 
@@ -170,7 +171,7 @@ const Navbar = ({ onContactClick, contactOpen, onJoinUsClick, joinUsOpen }) => {
                                 <Link
                                     to={link.to}
                                     className={`nav-link ${isActive(link) ? 'active' : ''}`}
-                                    onClick={closeMenu}
+                                    onClick={link.to === '/' ? handleHomeClick : closeMenu}
                                 >
                                     {link.name}
                                 </Link>
