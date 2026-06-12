@@ -10,7 +10,7 @@ const ArticlePostView = ({ post, backLink, backLabel }) => (
       </Link>
 
       <header className="blog-post-header">
-        <span className="blog-list-id">{post.id}</span>
+        {/* <span className="blog-list-id">{post.id}</span> */}
         <h1>{post.title}</h1>
         <p className="blog-post-byline">By {post.author}</p>
       </header>
