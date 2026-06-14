@@ -18,7 +18,7 @@ const Team = () => {
         { name: 'Ayush', role: 'CFO', image: ayushImg, objectPosition: 'center 20%' },
         { name: 'Vinnarasi', role: 'Core Team', image: vinsImg, objectPosition: 'center 20%' },
         { name: 'Sripathy', role: 'Core Team', image: sripathyImg, objectPosition: 'center 25%' },
-        { name: 'Abishek', role: 'Core Team', image: abishekImg, objectPosition: 'center 20%' },
+        { name: 'Abishek S', role: 'Core Team', image: abishekImg, objectPosition: 'center 20%' },
         { name: 'Vedh', role: 'Core Team', image: vedhImg, objectPosition: 'center 20%' },
         { name: 'Sukanya', role: 'HR', image: sukanyaImg, objectPosition: 'center 25%' },
         { name: 'Chetna', role: 'Content Head', image: chetnaImg, objectPosition: 'center 25%' },
