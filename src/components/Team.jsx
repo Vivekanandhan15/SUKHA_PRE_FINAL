@@ -13,15 +13,15 @@ import chetnaImg from '../assets/Team/Chetna.png';
 
 const Team = () => {
     const members = [
-        { name: 'Nikitha', role: 'Co-COO', image: nikitaImg, objectPosition: 'center 15%' },
+        { name: 'Nikitha Rajesh', role: 'Co-COO', image: nikitaImg, objectPosition: 'center 15%' },
         { name: 'Shiva Chandrika', role: 'Co-COO', image: shivaImg, objectPosition: 'center 20%' },
-        { name: 'Ayush', role: 'CFO', image: ayushImg, objectPosition: 'center 20%' },
-        { name: 'Vinnarasi', role: 'Core Team', image: vinsImg, objectPosition: 'center 20%' },
-        { name: 'Sripathy', role: 'Core Team', image: sripathyImg, objectPosition: 'center 25%' },
+        { name: 'Ayush R', role: 'CFO', image: ayushImg, objectPosition: 'center 20%' },
+        { name: 'Vinnarasi Victoria F', role: 'Core Team', image: vinsImg, objectPosition: 'center 20%' },
+        { name: 'D. Sripathy', role: 'Core Team', image: sripathyImg, objectPosition: 'center 25%' },
         { name: 'Abishek S', role: 'Core Team', image: abishekImg, objectPosition: 'center 20%' },
         { name: 'Vedh', role: 'Core Team', image: vedhImg, objectPosition: 'center 20%' },
-        { name: 'Sukanya', role: 'HR', image: sukanyaImg, objectPosition: 'center 25%' },
-        { name: 'Chetna', role: 'Content Head', image: chetnaImg, objectPosition: 'center 25%' },
+        { name: 'Sukanya Sankar', role: 'HR', image: sukanyaImg, objectPosition: 'center 25%' },
+        { name: 'Chetna Parakh', role: 'Content Head', image: chetnaImg, objectPosition: 'center 25%' },
     ];
 
     return (

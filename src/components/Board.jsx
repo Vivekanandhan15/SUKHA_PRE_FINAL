@@ -7,7 +7,7 @@ const Board = () => {
     const directors = [
         {
             id: 1,
-            name: 'Kavya',
+            name: 'Kavya Ramachandran',
             role: 'Co-Founder',
             image: kavyaImg,
             imgPosition: 'center',
@@ -16,7 +16,7 @@ const Board = () => {
         },
         {
             id: 2,
-            name: 'Sanjana',
+            name: 'Sanjana Vijay',
             role: 'Co-Founder',
             image: sanjanaImg,
             imgPosition: 'top',
